@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Projet_Onssa_Web_Mvc.Models.FournisseurSet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RC_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patente_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IF_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNSS_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Compte_bancaire_n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ville)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Banque)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RC_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patente_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IF_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNSS_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Compte_bancaire_n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ville)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Banque)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdFournisseur }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdFournisseur }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdFournisseur })
+        </td>
+    </tr>
+}
+
+</table>
