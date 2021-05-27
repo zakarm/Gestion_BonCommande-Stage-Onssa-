@@ -97,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\sb-admin-2.min.css" />
-    <Content Include="Content\img\onssa.png" />
+    <Content Include="Content\img\onssaa.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Global.asax" />

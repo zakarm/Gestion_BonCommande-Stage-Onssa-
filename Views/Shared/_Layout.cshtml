@@ -41,9 +41,7 @@
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center">
 
-
-
-                    <img style="width : 65% " class="navbar-brand" src="~/Content/img/onssa.png" />
+                    <img style="width : 65% " class="navbar-brand" src="~/Content/img/onssaa.png" />
 
                 </a>
 
@@ -52,7 +50,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" >
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Accueil</span>
                     </a>
@@ -96,9 +94,9 @@
                     <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item" href="~/Views/FournisseurSets/Create.cshtml">Fournisseur</a>
+                            @Html.ActionLink("Fournisseur", "Create", "FournisseurSets", null, new { @class = "collapse-item" })
                             <a class="collapse-item" href="">Commission</a>
-                            
+
 
                         </div>
                     </div>
@@ -180,11 +178,7 @@
                 </div>
 
                 <!-- Sidebar Message -->
-                <div class="sidebar-card d-none d-lg-flex">
-                    <img class="sidebar-card-illustration mb-2" src="~/Content/img/undraw_rocket.svg" alt="...">
-                    <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                    <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-                </div>
+                
 
             </ul>
             <!-- End of Sidebar -->
@@ -405,7 +399,8 @@
                     </nav>
                     <!-- End of Topbar -->
                     <!-- Begin Page Content -->
-                    <div class="container body-content">
+
+                    <div class="container-fluid">
                         @RenderBody()
                         <hr />
                         <footer>

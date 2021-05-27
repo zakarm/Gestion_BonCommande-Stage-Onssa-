@@ -8,6 +8,8 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
+    <div class="container body-content">
+
     
     <div class="form-horizontal">
         <h1>Fournisseur</h1>
@@ -104,8 +106,10 @@
         
       
     </div>
+    </div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+       
