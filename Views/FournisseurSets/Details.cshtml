@@ -4,95 +4,98 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="container body-content">
+    
 
-<div>
-    <h1>Fournisseur</h1>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nom)
-        </dt>
+    <div>
+        <h1>Fournisseur <sup style="font-size:15px;">Details</sup></h1>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nom)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nom)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Nom)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Adresse)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Adresse)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Adresse)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RC_n)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RC_n)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RC_n)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RC_n)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Patente_n)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Patente_n)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Patente_n)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Patente_n)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IF_n)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.IF_n)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IF_n)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.IF_n)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CNSS_n)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CNSS_n)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CNSS_n)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CNSS_n)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Compte_bancaire_n)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Compte_bancaire_n)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Compte_bancaire_n)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Compte_bancaire_n)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ICE)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ICE)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ICE)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ICE)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ville)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Ville)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ville)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Ville)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Banque)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Banque)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Banque)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Banque)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdFournisseur }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFournisseur }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

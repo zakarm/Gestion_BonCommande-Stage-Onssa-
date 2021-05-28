@@ -1,0 +1,50 @@
+﻿@model Projet_Onssa_Web_Mvc.Models.CommissionSet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CommissionSet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fonction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fonction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Affectation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Affectation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCommission }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

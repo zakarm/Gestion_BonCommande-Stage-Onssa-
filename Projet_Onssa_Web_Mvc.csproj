@@ -1788,6 +1788,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
+    <Compile Include="Controllers\CommissionSetsController.cs" />
     <Compile Include="Controllers\FournisseurSetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1999,6 +2000,11 @@
     <Content Include="Views\FournisseurSets\Details.cshtml" />
     <Content Include="Views\FournisseurSets\Edit.cshtml" />
     <Content Include="Views\FournisseurSets\Index.cshtml" />
+    <Content Include="Views\CommissionSets\Create.cshtml" />
+    <Content Include="Views\CommissionSets\Delete.cshtml" />
+    <Content Include="Views\CommissionSets\Details.cshtml" />
+    <Content Include="Views\CommissionSets\Edit.cshtml" />
+    <Content Include="Views\CommissionSets\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
