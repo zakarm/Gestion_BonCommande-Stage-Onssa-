@@ -28,6 +28,24 @@
         <script src="~/Content/js/demo/chart-area-demo.js"></script>
         <script src="~/Content/js/demo/chart-pie-demo.js"></script>
 
+        <script>
+            $(document).ready(function () {
+                $("#click").mouseenter(function () {
+
+                    $("#click").css("color", "black");
+
+                });
+
+                $("#click").mouseleave(function () {
+
+                    $("#click").css("color", "white");
+
+                });
+
+            })
+        </script>
+
+
     </head>
 
     <body id="page-top">
@@ -49,11 +67,11 @@
                 <hr class="sidebar-divider my-0">
 
                 <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
-                    <a class="nav-link" >
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Accueil</span>
-                    </a>
+                <li  class="nav-item active">
+                    
+                       @Html.ActionLink("Accueil", "Statistique", "Accueil", null, new { @class = "nav-link" })
+
+                    
                 </li>
 
                 <!-- Divider -->
@@ -66,7 +84,7 @@
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    <a id="nav1" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                        aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Processus Paiement</span>
