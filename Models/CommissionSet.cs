@@ -19,16 +19,20 @@ namespace Projet_Onssa_Web_Mvc.Models
         [Key]
         public int IdCommission { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "veuillez fournir un Nom")]
+        [Display(Name = "Nom Commission")]
         public string Nom { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "veuillez fournir un Prenom")]
+        [Display(Name = "Prénom Commission")]
         public string Prenom { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "veuillez fournir un Fonction")]
+        [Display(Name = "Fonction")]
         public string Fonction { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "veuillez fournir un Affectation")]
+        [Display(Name = "Affectation")]
         public string Affectation { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

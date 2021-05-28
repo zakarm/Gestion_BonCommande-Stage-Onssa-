@@ -54,7 +54,6 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(commissionSet);
         }
 
