@@ -5,12 +5,12 @@
 }
 
 
+<div class="container body-content">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
-    <div class="container body-content">
 
         <div class="form-horizontal">
             <h1>Fournisseur <sup style="font-size:15px;">Modifier</sup></h1>
@@ -98,18 +98,22 @@
                 </div>
             </div>
 
+            <br />
+            <hr />
+
             <div class="form-group ">
                 <center>
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Modifier" style="margin-left:-150px; width:35%" class="btn btn-primary" />
+                        <input type="submit" value="Ajouter" style="margin-left:-150px;  width:20%" class="btn btn-primary" />
                     </div>
                 </center>
-
             </div>
-          </div>
-        </div>
-        }
 
-        <div>
-            @Html.ActionLink("Back to List", "Index")
         </div>
+
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
