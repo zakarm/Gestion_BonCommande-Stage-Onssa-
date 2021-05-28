@@ -1997,12 +1997,10 @@
     <Content Include="Views\Accueil\Statistique.cshtml" />
     <Content Include="Views\FournisseurSets\Create.cshtml" />
     <Content Include="Views\FournisseurSets\Delete.cshtml" />
-    <Content Include="Views\FournisseurSets\Details.cshtml" />
     <Content Include="Views\FournisseurSets\Edit.cshtml" />
     <Content Include="Views\FournisseurSets\Index.cshtml" />
     <Content Include="Views\CommissionSets\Create.cshtml" />
     <Content Include="Views\CommissionSets\Delete.cshtml" />
-    <Content Include="Views\CommissionSets\Details.cshtml" />
     <Content Include="Views\CommissionSets\Edit.cshtml" />
     <Content Include="Views\CommissionSets\Index.cshtml" />
     <None Include="Web.Debug.config">

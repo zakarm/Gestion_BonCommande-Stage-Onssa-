@@ -4,48 +4,54 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Prenom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fonction)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Affectation)
-        </th>
-        <th></th>
-    </tr>
+<div style="padding:30px;">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prenom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fonction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Affectation)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCommission }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCommission }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCommission })
-        </td>
-    </tr>
-}
+    <h2>Commission <sup style="font-size:15px;">Information</sup></h2>
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fonction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Affectation)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fonction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Affectation)
+                </td>
+                <td>
+                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdCommission }) |
+                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IdCommission })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <hr />
+    <div>
+        @Html.ActionLink("Ajouter", "Create")
+    </div>
+</div>
+    

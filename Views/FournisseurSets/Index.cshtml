@@ -5,11 +5,14 @@
 }
 
 
-    <h2>Fournisseur <sup style="font-size:15px;">Information</sup></h2>
 
-    <p>
-        @Html.ActionLink("Ajouter", "Create")
-    </p>
+<div style="padding:30px;">
+
+
+    <h2>Fournisseur <sup style="font-size:15px;">Information</sup></h2>
+    <br />
+
+
     <table class="table">
         <tr>
             <th>
@@ -80,11 +83,16 @@
                 </td>
                 <td>
                     @Html.ActionLink("Modifier", "Edit", new { id = item.IdFournisseur }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.IdFournisseur }) |
                     @Html.ActionLink("Supprimer", "Delete", new { id = item.IdFournisseur })
                 </td>
             </tr>
         }
 
     </table>
+    <hr />
+    <div>
+        @Html.ActionLink("Ajouter", "Create")
+    </div>
 
+
+</div>
