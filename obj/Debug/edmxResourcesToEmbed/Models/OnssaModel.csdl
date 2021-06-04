@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Onssa_ProjetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BCSet">
+    <Key>
+      <PropertyRef Name="IdBC" />
+    </Key>
+    <Property Name="IdBC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumBc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DelaiExecution" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateBC" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InfoMorasse_CodeMorasse" Type="Int32" Nullable="false" />
+    <Property Name="InfoPVJ_IdPVJ" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FESet" Relationship="Self.FK_BCFE" FromRole="BCSet" ToRole="FESet" />
+    <NavigationProperty Name="MorasseSet" Relationship="Self.FK_BCMorasse" FromRole="BCSet" ToRole="MorasseSet" />
+    <NavigationProperty Name="PVJSet" Relationship="Self.FK_PVJBC" FromRole="BCSet" ToRole="PVJSet" />
+  </EntityType>
+  <EntityType Name="CommissionSet">
+    <Key>
+      <PropertyRef Name="IdCommission" />
+    </Key>
+    <Property Name="IdCommission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fonction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Affectation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PVRSet" Relationship="Self.CommissionPVR" FromRole="CommissionSet" ToRole="PVRSet" />
+    <NavigationProperty Name="PVJSet" Relationship="Self.PVJCommission" FromRole="CommissionSet" ToRole="PVJSet" />
+  </EntityType>
+  <EntityType Name="ConsultationSet">
+    <Key>
+      <PropertyRef Name="IdConsultation" />
+    </Key>
+    <Property Name="IdConsultation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjetConsultation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumConsultation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateLettre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDelai" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumEnvoi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ModeleDevisSet" Relationship="Self.FK_ModeleDevisConsultation" FromRole="ConsultationSet" ToRole="ModeleDevisSet" />
+    <NavigationProperty Name="PVJSet" Relationship="Self.FK_PVJConsultation" FromRole="ConsultationSet" ToRole="PVJSet" />
+    <NavigationProperty Name="FournisseurSet" Relationship="Self.ConsultationFournisseur" FromRole="ConsultationSet" ToRole="FournisseurSet" />
+  </EntityType>
+  <EntityType Name="FESet">
+    <Key>
+      <PropertyRef Name="IdFE" />
+    </Key>
+    <Property Name="IdFE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditsBudgetaires" Type="Int32" Nullable="false" />
+    <Property Name="DepensesEngagees" Type="Int32" Nullable="false" />
+    <Property Name="Disponible" Type="Int32" Nullable="false" />
+    <Property Name="EngagementDepensesPropose" Type="Int32" Nullable="false" />
+    <Property Name="NumFe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoBC_IdBC" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BCSet" Relationship="Self.FK_BCFE" FromRole="FESet" ToRole="BCSet" />
+    <NavigationProperty Name="OISet" Relationship="Self.FK_FEOI" FromRole="FESet" ToRole="OISet" />
+  </EntityType>
+  <EntityType Name="FournisseurSet">
+    <Key>
+      <PropertyRef Name="IdFournisseur" />
+    </Key>
+    <Property Name="IdFournisseur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RC_n" Type="Int32" Nullable="false" />
+    <Property Name="Patente_n" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IF_n" Type="Int32" Nullable="false" />
+    <Property Name="CNSS_n" Type="Int32" Nullable="false" />
+    <Property Name="Compte_bancaire_n" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ICE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ville" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Banque" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ModeleDevisSet" Relationship="Self.FK_ModeleDevisFournisseur" FromRole="FournisseurSet" ToRole="ModeleDevisSet" />
+    <NavigationProperty Name="PVJSet" Relationship="Self.FK_PVJFournisseur1" FromRole="FournisseurSet" ToRole="PVJSet" />
+    <NavigationProperty Name="ConsultationSet" Relationship="Self.ConsultationFournisseur" FromRole="FournisseurSet" ToRole="ConsultationSet" />
+    <NavigationProperty Name="PVJSet1" Relationship="Self.PVJFournisseur" FromRole="FournisseurSet" ToRole="PVJSet" />
+  </EntityType>
+  <EntityType Name="GestionCompteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MotDePasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeCompte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LigneSet">
+    <Key>
+      <PropertyRef Name="CodeLigne" />
+    </Key>
+    <Property Name="CodeLigne" Type="Int32" Nullable="false" />
+    <Property Name="DescriptionLigne" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoLrg_CodeLrg" Type="Int32" />
+    <NavigationProperty Name="LrgSet" Relationship="Self.FK_LigneLrg" FromRole="LigneSet" ToRole="LrgSet" />
+    <NavigationProperty Name="MorasseSet" Relationship="Self.FK_MorasseLigne" FromRole="LigneSet" ToRole="MorasseSet" />
+  </EntityType>
+  <EntityType Name="LrgSet">
+    <Key>
+      <PropertyRef Name="CodeLrg" />
+    </Key>
+    <Property Name="CodeLrg" Type="Int32" Nullable="false" />
+    <Property Name="DescriptionLrg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumLrg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoParagraphe_NumPar" Type="Int32" />
+    <NavigationProperty Name="LigneSet" Relationship="Self.FK_LigneLrg" FromRole="LrgSet" ToRole="LigneSet" />
+    <NavigationProperty Name="ParagrapheSet" Relationship="Self.FK_ParagrapheLrg" FromRole="LrgSet" ToRole="ParagrapheSet" />
+  </EntityType>
+  <EntityType Name="ModeleDevisSet">
+    <Key>
+      <PropertyRef Name="IdModeleDevis" />
+    </Key>
+    <Property Name="IdModeleDevis" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumDevis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Total" Type="Double" Nullable="false" />
+    <Property Name="Tva" Type="Double" Nullable="false" />
+    <Property Name="Ttc" Type="Double" Nullable="false" />
+    <Property Name="InfoFournisseur_IdFournisseur" Type="Int32" Nullable="false" />
+    <Property Name="InfoConsultation_IdConsultation" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ConsultationSet" Relationship="Self.FK_ModeleDevisConsultation" FromRole="ModeleDevisSet" ToRole="ConsultationSet" />
+    <NavigationProperty Name="FournisseurSet" Relationship="Self.FK_ModeleDevisFournisseur" FromRole="ModeleDevisSet" ToRole="FournisseurSet" />
+    <NavigationProperty Name="ProduitSet" Relationship="Self.ModeleDevisProduit" FromRole="ModeleDevisSet" ToRole="ProduitSet" />
+  </EntityType>
+  <EntityType Name="MorasseSet">
+    <Key>
+      <PropertyRef Name="CodeMorasse" />
+    </Key>
+    <Property Name="CodeMorasse" Type="Int32" Nullable="false" />
+    <Property Name="Exercice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Budget" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ligne_CodeLigne" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BCSet" Relationship="Self.FK_BCMorasse" FromRole="MorasseSet" ToRole="BCSet" />
+    <NavigationProperty Name="LigneSet" Relationship="Self.FK_MorasseLigne" FromRole="MorasseSet" ToRole="LigneSet" />
+  </EntityType>
+  <EntityType Name="OISet">
+    <Key>
+      <PropertyRef Name="IdOI" />
+    </Key>
+    <Property Name="IdOI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumOi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOI" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumCompteDebit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VisaControle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VisaCsrs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DatePaiement" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VisaSordonnateur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VisaTresorierPayeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoFE_IdFE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FESet" Relationship="Self.FK_FEOI" FromRole="OISet" ToRole="FESet" />
+    <NavigationProperty Name="OPSet" Relationship="Self.FK_OIOP" FromRole="OISet" ToRole="OPSet" />
+    <NavigationProperty Name="PVRSet" Relationship="Self.FK_OIPVR" FromRole="OISet" ToRole="PVRSet" />
+  </EntityType>
+  <EntityType Name="OPSet">
+    <Key>
+      <PropertyRef Name="IdOP" />
+    </Key>
+    <Property Name="IdOP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumOP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InfoOI_IdOI" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OISet" Relationship="Self.FK_OIOP" FromRole="OPSet" ToRole="OISet" />
+    <NavigationProperty Name="OVSet" Relationship="Self.FK_OVOP" FromRole="OPSet" ToRole="OVSet" />
+  </EntityType>
+  <EntityType Name="OVSet">
+    <Key>
+      <PropertyRef Name="IdOV" />
+    </Key>
+    <Property Name="IdOV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumOV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SousOrdonnateur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TresorierPayeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoOP_IdOP" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OPSet" Relationship="Self.FK_OVOP" FromRole="OVSet" ToRole="OPSet" />
+  </EntityType>
+  <EntityType Name="ParagrapheSet">
+    <Key>
+      <PropertyRef Name="NumPar" />
+    </Key>
+    <Property Name="NumPar" Type="Int32" Nullable="false" />
+    <Property Name="DescriptionPar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LrgSet" Relationship="Self.FK_ParagrapheLrg" FromRole="ParagrapheSet" ToRole="LrgSet" />
+  </EntityType>
+  <EntityType Name="ProduitSet">
+    <Key>
+      <PropertyRef Name="IdProduit" />
+    </Key>
+    <Property Name="IdProduit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantite" Type="Int32" Nullable="false" />
+    <Property Name="Prix_Unitaire" Type="Double" Nullable="false" />
+    <Property Name="Prix_Total" Type="Double" Nullable="false" />
+    <NavigationProperty Name="ModeleDevisSet" Relationship="Self.ModeleDevisProduit" FromRole="ProduitSet" ToRole="ModeleDevisSet" />
+  </EntityType>
+  <EntityType Name="PVJSet">
+    <Key>
+      <PropertyRef Name="IdPVJ" />
+    </Key>
+    <Property Name="IdPVJ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DatePvj" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumPvj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoConsultation_IdConsultation" Type="Int32" Nullable="false" />
+    <Property Name="InfoFournisseur_IdFournisseur" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BCSet" Relationship="Self.FK_PVJBC" FromRole="PVJSet" ToRole="BCSet" />
+    <NavigationProperty Name="ConsultationSet" Relationship="Self.FK_PVJConsultation" FromRole="PVJSet" ToRole="ConsultationSet" />
+    <NavigationProperty Name="FournisseurSet" Relationship="Self.FK_PVJFournisseur1" FromRole="PVJSet" ToRole="FournisseurSet" />
+    <NavigationProperty Name="CommissionSet" Relationship="Self.PVJCommission" FromRole="PVJSet" ToRole="CommissionSet" />
+    <NavigationProperty Name="FournisseurSet1" Relationship="Self.PVJFournisseur" FromRole="PVJSet" ToRole="FournisseurSet" />
+  </EntityType>
+  <EntityType Name="PVRSet">
+    <Key>
+      <PropertyRef Name="IdPVR" />
+    </Key>
+    <Property Name="IdPVR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DatePVR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumPvr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoOI_IdOI" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OISet" Relationship="Self.FK_OIPVR" FromRole="PVRSet" ToRole="OISet" />
+    <NavigationProperty Name="CommissionSet" Relationship="Self.CommissionPVR" FromRole="PVRSet" ToRole="CommissionSet" />
+  </EntityType>
+  <Association Name="FK_BCFE">
+    <End Role="BCSet" Type="Self.BCSet" Multiplicity="1" />
+    <End Role="FESet" Type="Self.FESet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BCSet">
+        <PropertyRef Name="IdBC" />
+      </Principal>
+      <Dependent Role="FESet">
+        <PropertyRef Name="InfoBC_IdBC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BCMorasse">
+    <End Role="MorasseSet" Type="Self.MorasseSet" Multiplicity="1" />
+    <End Role="BCSet" Type="Self.BCSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MorasseSet">
+        <PropertyRef Name="CodeMorasse" />
+      </Principal>
+      <Dependent Role="BCSet">
+        <PropertyRef Name="InfoMorasse_CodeMorasse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PVJBC">
+    <End Role="PVJSet" Type="Self.PVJSet" Multiplicity="1" />
+    <End Role="BCSet" Type="Self.BCSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PVJSet">
+        <PropertyRef Name="IdPVJ" />
+      </Principal>
+      <Dependent Role="BCSet">
+        <PropertyRef Name="InfoPVJ_IdPVJ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModeleDevisConsultation">
+    <End Role="ConsultationSet" Type="Self.ConsultationSet" Multiplicity="1" />
+    <End Role="ModeleDevisSet" Type="Self.ModeleDevisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultationSet">
+        <PropertyRef Name="IdConsultation" />
+      </Principal>
+      <Dependent Role="ModeleDevisSet">
+        <PropertyRef Name="InfoConsultation_IdConsultation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PVJConsultation">
+    <End Role="ConsultationSet" Type="Self.ConsultationSet" Multiplicity="1" />
+    <End Role="PVJSet" Type="Self.PVJSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultationSet">
+        <PropertyRef Name="IdConsultation" />
+      </Principal>
+      <Dependent Role="PVJSet">
+        <PropertyRef Name="InfoConsultation_IdConsultation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FEOI">
+    <End Role="FESet" Type="Self.FESet" Multiplicity="1" />
+    <End Role="OISet" Type="Self.OISet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FESet">
+        <PropertyRef Name="IdFE" />
+      </Principal>
+      <Dependent Role="OISet">
+        <PropertyRef Name="InfoFE_IdFE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModeleDevisFournisseur">
+    <End Role="FournisseurSet" Type="Self.FournisseurSet" Multiplicity="1" />
+    <End Role="ModeleDevisSet" Type="Self.ModeleDevisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FournisseurSet">
+        <PropertyRef Name="IdFournisseur" />
+      </Principal>
+      <Dependent Role="ModeleDevisSet">
+        <PropertyRef Name="InfoFournisseur_IdFournisseur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PVJFournisseur1">
+    <End Role="FournisseurSet" Type="Self.FournisseurSet" Multiplicity="1" />
+    <End Role="PVJSet" Type="Self.PVJSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FournisseurSet">
+        <PropertyRef Name="IdFournisseur" />
+      </Principal>
+      <Dependent Role="PVJSet">
+        <PropertyRef Name="InfoFournisseur_IdFournisseur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LigneLrg">
+    <End Role="LrgSet" Type="Self.LrgSet" Multiplicity="0..1" />
+    <End Role="LigneSet" Type="Self.LigneSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LrgSet">
+        <PropertyRef Name="CodeLrg" />
+      </Principal>
+      <Dependent Role="LigneSet">
+        <PropertyRef Name="InfoLrg_CodeLrg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MorasseLigne">
+    <End Role="LigneSet" Type="Self.LigneSet" Multiplicity="1" />
+    <End Role="MorasseSet" Type="Self.MorasseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LigneSet">
+        <PropertyRef Name="CodeLigne" />
+      </Principal>
+      <Dependent Role="MorasseSet">
+        <PropertyRef Name="Ligne_CodeLigne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParagrapheLrg">
+    <End Role="ParagrapheSet" Type="Self.ParagrapheSet" Multiplicity="0..1" />
+    <End Role="LrgSet" Type="Self.LrgSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParagrapheSet">
+        <PropertyRef Name="NumPar" />
+      </Principal>
+      <Dependent Role="LrgSet">
+        <PropertyRef Name="InfoParagraphe_NumPar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OIOP">
+    <End Role="OISet" Type="Self.OISet" Multiplicity="1" />
+    <End Role="OPSet" Type="Self.OPSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OISet">
+        <PropertyRef Name="IdOI" />
+      </Principal>
+      <Dependent Role="OPSet">
+        <PropertyRef Name="InfoOI_IdOI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OIPVR">
+    <End Role="OISet" Type="Self.OISet" Multiplicity="1" />
+    <End Role="PVRSet" Type="Self.PVRSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OISet">
+        <PropertyRef Name="IdOI" />
+      </Principal>
+      <Dependent Role="PVRSet">
+        <PropertyRef Name="InfoOI_IdOI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OVOP">
+    <End Role="OPSet" Type="Self.OPSet" Multiplicity="1" />
+    <End Role="OVSet" Type="Self.OVSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSet">
+        <PropertyRef Name="IdOP" />
+      </Principal>
+      <Dependent Role="OVSet">
+        <PropertyRef Name="InfoOP_IdOP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommissionPVR">
+    <End Role="CommissionSet" Type="Self.CommissionSet" Multiplicity="*" />
+    <End Role="PVRSet" Type="Self.PVRSet" Multiplicity="*" />
+  </Association>
+  <Association Name="ConsultationFournisseur">
+    <End Role="ConsultationSet" Type="Self.ConsultationSet" Multiplicity="*" />
+    <End Role="FournisseurSet" Type="Self.FournisseurSet" Multiplicity="*" />
+  </Association>
+  <Association Name="ModeleDevisProduit">
+    <End Role="ModeleDevisSet" Type="Self.ModeleDevisSet" Multiplicity="*" />
+    <End Role="ProduitSet" Type="Self.ProduitSet" Multiplicity="*" />
+  </Association>
+  <Association Name="PVJCommission">
+    <End Role="CommissionSet" Type="Self.CommissionSet" Multiplicity="*" />
+    <End Role="PVJSet" Type="Self.PVJSet" Multiplicity="*" />
+  </Association>
+  <Association Name="PVJFournisseur">
+    <End Role="FournisseurSet" Type="Self.FournisseurSet" Multiplicity="*" />
+    <End Role="PVJSet" Type="Self.PVJSet" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Onssa_ProjetEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BCSet" EntityType="Self.BCSet" />
+    <EntitySet Name="CommissionSet" EntityType="Self.CommissionSet" />
+    <EntitySet Name="ConsultationSet" EntityType="Self.ConsultationSet" />
+    <EntitySet Name="FESet" EntityType="Self.FESet" />
+    <EntitySet Name="FournisseurSet" EntityType="Self.FournisseurSet" />
+    <EntitySet Name="GestionCompteSet" EntityType="Self.GestionCompteSet" />
+    <EntitySet Name="LigneSet" EntityType="Self.LigneSet" />
+    <EntitySet Name="LrgSet" EntityType="Self.LrgSet" />
+    <EntitySet Name="ModeleDevisSet" EntityType="Self.ModeleDevisSet" />
+    <EntitySet Name="MorasseSet" EntityType="Self.MorasseSet" />
+    <EntitySet Name="OISet" EntityType="Self.OISet" />
+    <EntitySet Name="OPSet" EntityType="Self.OPSet" />
+    <EntitySet Name="OVSet" EntityType="Self.OVSet" />
+    <EntitySet Name="ParagrapheSet" EntityType="Self.ParagrapheSet" />
+    <EntitySet Name="ProduitSet" EntityType="Self.ProduitSet" />
+    <EntitySet Name="PVJSet" EntityType="Self.PVJSet" />
+    <EntitySet Name="PVRSet" EntityType="Self.PVRSet" />
+    <AssociationSet Name="FK_BCFE" Association="Self.FK_BCFE">
+      <End Role="BCSet" EntitySet="BCSet" />
+      <End Role="FESet" EntitySet="FESet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BCMorasse" Association="Self.FK_BCMorasse">
+      <End Role="MorasseSet" EntitySet="MorasseSet" />
+      <End Role="BCSet" EntitySet="BCSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PVJBC" Association="Self.FK_PVJBC">
+      <End Role="PVJSet" EntitySet="PVJSet" />
+      <End Role="BCSet" EntitySet="BCSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModeleDevisConsultation" Association="Self.FK_ModeleDevisConsultation">
+      <End Role="ConsultationSet" EntitySet="ConsultationSet" />
+      <End Role="ModeleDevisSet" EntitySet="ModeleDevisSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PVJConsultation" Association="Self.FK_PVJConsultation">
+      <End Role="ConsultationSet" EntitySet="ConsultationSet" />
+      <End Role="PVJSet" EntitySet="PVJSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FEOI" Association="Self.FK_FEOI">
+      <End Role="FESet" EntitySet="FESet" />
+      <End Role="OISet" EntitySet="OISet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModeleDevisFournisseur" Association="Self.FK_ModeleDevisFournisseur">
+      <End Role="FournisseurSet" EntitySet="FournisseurSet" />
+      <End Role="ModeleDevisSet" EntitySet="ModeleDevisSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PVJFournisseur1" Association="Self.FK_PVJFournisseur1">
+      <End Role="FournisseurSet" EntitySet="FournisseurSet" />
+      <End Role="PVJSet" EntitySet="PVJSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LigneLrg" Association="Self.FK_LigneLrg">
+      <End Role="LrgSet" EntitySet="LrgSet" />
+      <End Role="LigneSet" EntitySet="LigneSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MorasseLigne" Association="Self.FK_MorasseLigne">
+      <End Role="LigneSet" EntitySet="LigneSet" />
+      <End Role="MorasseSet" EntitySet="MorasseSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParagrapheLrg" Association="Self.FK_ParagrapheLrg">
+      <End Role="ParagrapheSet" EntitySet="ParagrapheSet" />
+      <End Role="LrgSet" EntitySet="LrgSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OIOP" Association="Self.FK_OIOP">
+      <End Role="OISet" EntitySet="OISet" />
+      <End Role="OPSet" EntitySet="OPSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OIPVR" Association="Self.FK_OIPVR">
+      <End Role="OISet" EntitySet="OISet" />
+      <End Role="PVRSet" EntitySet="PVRSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OVOP" Association="Self.FK_OVOP">
+      <End Role="OPSet" EntitySet="OPSet" />
+      <End Role="OVSet" EntitySet="OVSet" />
+    </AssociationSet>
+    <AssociationSet Name="CommissionPVR" Association="Self.CommissionPVR">
+      <End Role="CommissionSet" EntitySet="CommissionSet" />
+      <End Role="PVRSet" EntitySet="PVRSet" />
+    </AssociationSet>
+    <AssociationSet Name="ConsultationFournisseur" Association="Self.ConsultationFournisseur">
+      <End Role="ConsultationSet" EntitySet="ConsultationSet" />
+      <End Role="FournisseurSet" EntitySet="FournisseurSet" />
+    </AssociationSet>
+    <AssociationSet Name="ModeleDevisProduit" Association="Self.ModeleDevisProduit">
+      <End Role="ModeleDevisSet" EntitySet="ModeleDevisSet" />
+      <End Role="ProduitSet" EntitySet="ProduitSet" />
+    </AssociationSet>
+    <AssociationSet Name="PVJCommission" Association="Self.PVJCommission">
+      <End Role="CommissionSet" EntitySet="CommissionSet" />
+      <End Role="PVJSet" EntitySet="PVJSet" />
+    </AssociationSet>
+    <AssociationSet Name="PVJFournisseur" Association="Self.PVJFournisseur">
+      <End Role="FournisseurSet" EntitySet="FournisseurSet" />
+      <End Role="PVJSet" EntitySet="PVJSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

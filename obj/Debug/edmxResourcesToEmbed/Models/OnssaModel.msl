@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Onssa_ProjetModelStoreContainer" CdmEntityContainer="Onssa_ProjetEntities">
+    <EntitySetMapping Name="BCSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.BCSet">
+        <MappingFragment StoreEntitySet="BCSet">
+          <ScalarProperty Name="IdBC" ColumnName="IdBC" />
+          <ScalarProperty Name="NumBc" ColumnName="NumBc" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="DelaiExecution" ColumnName="DelaiExecution" />
+          <ScalarProperty Name="DateBC" ColumnName="DateBC" />
+          <ScalarProperty Name="InfoMorasse_CodeMorasse" ColumnName="InfoMorasse_CodeMorasse" />
+          <ScalarProperty Name="InfoPVJ_IdPVJ" ColumnName="InfoPVJ_IdPVJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommissionSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.CommissionSet">
+        <MappingFragment StoreEntitySet="CommissionSet">
+          <ScalarProperty Name="IdCommission" ColumnName="IdCommission" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Fonction" ColumnName="Fonction" />
+          <ScalarProperty Name="Affectation" ColumnName="Affectation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultationSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.ConsultationSet">
+        <MappingFragment StoreEntitySet="ConsultationSet">
+          <ScalarProperty Name="IdConsultation" ColumnName="IdConsultation" />
+          <ScalarProperty Name="ObjetConsultation" ColumnName="ObjetConsultation" />
+          <ScalarProperty Name="NumConsultation" ColumnName="NumConsultation" />
+          <ScalarProperty Name="DateLettre" ColumnName="DateLettre" />
+          <ScalarProperty Name="DateDelai" ColumnName="DateDelai" />
+          <ScalarProperty Name="NumEnvoi" ColumnName="NumEnvoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FESet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.FESet">
+        <MappingFragment StoreEntitySet="FESet">
+          <ScalarProperty Name="IdFE" ColumnName="IdFE" />
+          <ScalarProperty Name="CreditsBudgetaires" ColumnName="CreditsBudgetaires" />
+          <ScalarProperty Name="DepensesEngagees" ColumnName="DepensesEngagees" />
+          <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+          <ScalarProperty Name="EngagementDepensesPropose" ColumnName="EngagementDepensesPropose" />
+          <ScalarProperty Name="NumFe" ColumnName="NumFe" />
+          <ScalarProperty Name="InfoBC_IdBC" ColumnName="InfoBC_IdBC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FournisseurSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.FournisseurSet">
+        <MappingFragment StoreEntitySet="FournisseurSet">
+          <ScalarProperty Name="IdFournisseur" ColumnName="IdFournisseur" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="RC_n" ColumnName="RC_n" />
+          <ScalarProperty Name="Patente_n" ColumnName="Patente_n" />
+          <ScalarProperty Name="IF_n" ColumnName="IF_n" />
+          <ScalarProperty Name="CNSS_n" ColumnName="CNSS_n" />
+          <ScalarProperty Name="Compte_bancaire_n" ColumnName="Compte_bancaire_n" />
+          <ScalarProperty Name="ICE" ColumnName="ICE" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Banque" ColumnName="Banque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GestionCompteSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.GestionCompteSet">
+        <MappingFragment StoreEntitySet="GestionCompteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="TypeCompte" ColumnName="TypeCompte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LigneSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.LigneSet">
+        <MappingFragment StoreEntitySet="LigneSet">
+          <ScalarProperty Name="CodeLigne" ColumnName="CodeLigne" />
+          <ScalarProperty Name="DescriptionLigne" ColumnName="DescriptionLigne" />
+          <ScalarProperty Name="InfoLrg_CodeLrg" ColumnName="InfoLrg_CodeLrg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LrgSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.LrgSet">
+        <MappingFragment StoreEntitySet="LrgSet">
+          <ScalarProperty Name="CodeLrg" ColumnName="CodeLrg" />
+          <ScalarProperty Name="DescriptionLrg" ColumnName="DescriptionLrg" />
+          <ScalarProperty Name="NumLrg" ColumnName="NumLrg" />
+          <ScalarProperty Name="InfoParagraphe_NumPar" ColumnName="InfoParagraphe_NumPar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModeleDevisSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.ModeleDevisSet">
+        <MappingFragment StoreEntitySet="ModeleDevisSet">
+          <ScalarProperty Name="IdModeleDevis" ColumnName="IdModeleDevis" />
+          <ScalarProperty Name="NumDevis" ColumnName="NumDevis" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Tva" ColumnName="Tva" />
+          <ScalarProperty Name="Ttc" ColumnName="Ttc" />
+          <ScalarProperty Name="InfoFournisseur_IdFournisseur" ColumnName="InfoFournisseur_IdFournisseur" />
+          <ScalarProperty Name="InfoConsultation_IdConsultation" ColumnName="InfoConsultation_IdConsultation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MorasseSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.MorasseSet">
+        <MappingFragment StoreEntitySet="MorasseSet">
+          <ScalarProperty Name="CodeMorasse" ColumnName="CodeMorasse" />
+          <ScalarProperty Name="Exercice" ColumnName="Exercice" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Ligne_CodeLigne" ColumnName="Ligne_CodeLigne" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OISet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.OISet">
+        <MappingFragment StoreEntitySet="OISet">
+          <ScalarProperty Name="IdOI" ColumnName="IdOI" />
+          <ScalarProperty Name="NumOi" ColumnName="NumOi" />
+          <ScalarProperty Name="DateOI" ColumnName="DateOI" />
+          <ScalarProperty Name="NumCompteDebit" ColumnName="NumCompteDebit" />
+          <ScalarProperty Name="VisaControle" ColumnName="VisaControle" />
+          <ScalarProperty Name="VisaCsrs" ColumnName="VisaCsrs" />
+          <ScalarProperty Name="DatePaiement" ColumnName="DatePaiement" />
+          <ScalarProperty Name="VisaSordonnateur" ColumnName="VisaSordonnateur" />
+          <ScalarProperty Name="VisaTresorierPayeur" ColumnName="VisaTresorierPayeur" />
+          <ScalarProperty Name="InfoFE_IdFE" ColumnName="InfoFE_IdFE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.OPSet">
+        <MappingFragment StoreEntitySet="OPSet">
+          <ScalarProperty Name="IdOP" ColumnName="IdOP" />
+          <ScalarProperty Name="NumOP" ColumnName="NumOP" />
+          <ScalarProperty Name="DateOP" ColumnName="DateOP" />
+          <ScalarProperty Name="InfoOI_IdOI" ColumnName="InfoOI_IdOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OVSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.OVSet">
+        <MappingFragment StoreEntitySet="OVSet">
+          <ScalarProperty Name="IdOV" ColumnName="IdOV" />
+          <ScalarProperty Name="NumOV" ColumnName="NumOV" />
+          <ScalarProperty Name="SousOrdonnateur" ColumnName="SousOrdonnateur" />
+          <ScalarProperty Name="TresorierPayeur" ColumnName="TresorierPayeur" />
+          <ScalarProperty Name="InfoOP_IdOP" ColumnName="InfoOP_IdOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParagrapheSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.ParagrapheSet">
+        <MappingFragment StoreEntitySet="ParagrapheSet">
+          <ScalarProperty Name="NumPar" ColumnName="NumPar" />
+          <ScalarProperty Name="DescriptionPar" ColumnName="DescriptionPar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProduitSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.ProduitSet">
+        <MappingFragment StoreEntitySet="ProduitSet">
+          <ScalarProperty Name="IdProduit" ColumnName="IdProduit" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Unite" ColumnName="Unite" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="Prix_Unitaire" ColumnName="Prix_Unitaire" />
+          <ScalarProperty Name="Prix_Total" ColumnName="Prix_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PVJSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.PVJSet">
+        <MappingFragment StoreEntitySet="PVJSet">
+          <ScalarProperty Name="IdPVJ" ColumnName="IdPVJ" />
+          <ScalarProperty Name="DatePvj" ColumnName="DatePvj" />
+          <ScalarProperty Name="NumPvj" ColumnName="NumPvj" />
+          <ScalarProperty Name="InfoConsultation_IdConsultation" ColumnName="InfoConsultation_IdConsultation" />
+          <ScalarProperty Name="InfoFournisseur_IdFournisseur" ColumnName="InfoFournisseur_IdFournisseur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PVRSet">
+      <EntityTypeMapping TypeName="Onssa_ProjetModel.PVRSet">
+        <MappingFragment StoreEntitySet="PVRSet">
+          <ScalarProperty Name="IdPVR" ColumnName="IdPVR" />
+          <ScalarProperty Name="DatePVR" ColumnName="DatePVR" />
+          <ScalarProperty Name="NumPvr" ColumnName="NumPvr" />
+          <ScalarProperty Name="InfoOI_IdOI" ColumnName="InfoOI_IdOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CommissionPVR" TypeName="Onssa_ProjetModel.CommissionPVR" StoreEntitySet="CommissionPVR">
+      <EndProperty Name="CommissionSet">
+        <ScalarProperty Name="IdCommission" ColumnName="ListCommission_IdCommission" />
+      </EndProperty>
+      <EndProperty Name="PVRSet">
+        <ScalarProperty Name="IdPVR" ColumnName="ListPVR_IdPVR" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConsultationFournisseur" TypeName="Onssa_ProjetModel.ConsultationFournisseur" StoreEntitySet="ConsultationFournisseur">
+      <EndProperty Name="ConsultationSet">
+        <ScalarProperty Name="IdConsultation" ColumnName="ListConsultation_IdConsultation" />
+      </EndProperty>
+      <EndProperty Name="FournisseurSet">
+        <ScalarProperty Name="IdFournisseur" ColumnName="ListFournisseur_IdFournisseur" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ModeleDevisProduit" TypeName="Onssa_ProjetModel.ModeleDevisProduit" StoreEntitySet="ModeleDevisProduit">
+      <EndProperty Name="ModeleDevisSet">
+        <ScalarProperty Name="IdModeleDevis" ColumnName="ListModeleDevis_IdModeleDevis" />
+      </EndProperty>
+      <EndProperty Name="ProduitSet">
+        <ScalarProperty Name="IdProduit" ColumnName="ListProduit_IdProduit" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PVJCommission" TypeName="Onssa_ProjetModel.PVJCommission" StoreEntitySet="PVJCommission">
+      <EndProperty Name="CommissionSet">
+        <ScalarProperty Name="IdCommission" ColumnName="ListCommissions_IdCommission" />
+      </EndProperty>
+      <EndProperty Name="PVJSet">
+        <ScalarProperty Name="IdPVJ" ColumnName="ListPVJ_IdPVJ" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PVJFournisseur" TypeName="Onssa_ProjetModel.PVJFournisseur" StoreEntitySet="PVJFournisseur">
+      <EndProperty Name="FournisseurSet">
+        <ScalarProperty Name="IdFournisseur" ColumnName="ListFournisseursRepondu_IdFournisseur" />
+      </EndProperty>
+      <EndProperty Name="PVJSet">
+        <ScalarProperty Name="IdPVJ" ColumnName="ListPVJ1_IdPVJ" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

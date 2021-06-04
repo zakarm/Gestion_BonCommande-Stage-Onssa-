@@ -11,7 +11,7 @@ namespace Projet_Onssa_Web_Mvc.Controllers
 {
     public class AccueilController : Controller
     {
-        Onssa_Model ctx = new Onssa_Model();
+        Onssa_ProjetEntities ctx = new Onssa_ProjetEntities();
         // GET: Accueil
         [HttpGet]
         public ActionResult Statistique()

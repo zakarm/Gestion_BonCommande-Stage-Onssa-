@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\sb-admin-2.min.css" />
+    <Content Include="Content\img\banner.jpg" />
     <Content Include="Content\img\onssaa.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\css\sb-admin-2.css" />
@@ -1802,6 +1803,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
     <Compile Include="Controllers\CommissionSetsController.cs" />
+    <Compile Include="Controllers\ConnexionController.cs" />
     <Compile Include="Controllers\ConsultationSetsController.cs" />
     <Compile Include="Controllers\FournisseurSetsController.cs" />
     <Compile Include="Controllers\LrgSetsController.cs" />
@@ -2165,6 +2167,7 @@
     <Content Include="Views\LrgSets\Details.cshtml" />
     <Content Include="Views\LrgSets\Edit.cshtml" />
     <Content Include="Views\LrgSets\Index.cshtml" />
+    <Content Include="Views\Connexion\Connexion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

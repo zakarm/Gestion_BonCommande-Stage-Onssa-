@@ -12,7 +12,7 @@ namespace Projet_Onssa_Web_Mvc.Controllers
 {
     public class CommissionSetsController : Controller
     {
-        private Onssa_Model db = new Onssa_Model();
+        private Onssa_ProjetEntities db = new Onssa_ProjetEntities();
 
         // GET: CommissionSets
         public ActionResult Index()
