@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "LectureOv";
+}
+<div class="container body-content">
+    <h2>Lecture Ordre de virement</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+
+            @Html.AntiForgeryToken()
+            <br />
+            <br />
+            <br />
+            @Html.DropDownList("Ov", null, htmlAttributes: new { @class = "form-control", onchange = "SelectedIndexChanged(this);" })
+            <br />
+            <br />
+            <br />
+
+        </div>
+    }
+</div>
