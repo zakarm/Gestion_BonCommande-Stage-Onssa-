@@ -1804,7 +1804,6 @@
     <Compile Include="Controllers\AccueilController.cs" />
     <Compile Include="Controllers\CommissionSetsController.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
-    <Compile Include="Controllers\ConsultationSetsController.cs" />
     <Compile Include="Controllers\FournisseurSetsController.cs" />
     <Compile Include="Controllers\LrgSetsController.cs" />
     <Compile Include="CrystalReports\CrystalReportBC.cs">
@@ -2168,6 +2167,7 @@
     <Content Include="Views\LrgSets\Edit.cshtml" />
     <Content Include="Views\LrgSets\Index.cshtml" />
     <Content Include="Views\Connexion\Connexion.cshtml" />
+    <Content Include="Views\LectureConsultation\GetFList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

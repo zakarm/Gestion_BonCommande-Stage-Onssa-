@@ -1,4 +1,4 @@
-﻿@model Projet_Onssa_Web_Mvc.Models.FournisseurSet
+﻿@model Projet_Onssa_Web_Mvc.Models.ConsultationSet
 
 <div class="container body-content">
 
@@ -19,19 +19,23 @@
             <br />
             <br />
             <br />
-            @Html.DropDownList("Cons", null, htmlAttributes: new { @class = "form-control" ,onchange = "SelectedIndexChanged()" })
-            <!--Html.ActionLink("Valider", ())-->
-            <!--Html.DropDownList("Four", null, htmlAttributes: new { class = "form-control" })-->
+            @Html.DropDownList("Cons",null , htmlAttributes: new { @class = "form-control" , onchange ="SelectedIndexChanged(this);" })
+            <br />
+            <br />
+            <br />
 
         </div>
     }
 
 <script>
 
-        function SelectedIndexChanged() {
+    function SelectedIndexChanged(ddval) {
 
-            @Html.ActionLink("Modifier", "Edit", new { id = @Html.DropDownListFor(m => m., Model.Vendor, "Select Manufacurer") })
-        }
+       var set = ddval.value
+        $.get("/LectureConsultation/GetFList", { IdCOn : set});
+
+    }
+
 
 </script>
 </div>
