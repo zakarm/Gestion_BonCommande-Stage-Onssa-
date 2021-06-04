@@ -10,107 +10,112 @@ using Projet_Onssa_Web_Mvc.Models;
 
 namespace Projet_Onssa_Web_Mvc.Controllers
 {
-    public class FournisseurSetsController : Controller
+    public class LrgSetsController : Controller
     {
-        private Onssa_ProjetEntities db = new Onssa_ProjetEntities();
+        private Onssa_Model db = new Onssa_Model();
 
-        // GET: FournisseurSets
+        // GET: LrgSets
         public ActionResult Index()
         {
-            return View(db.FournisseurSet.ToList());
+            var lrgSet = db.LrgSet.Include(l => l.ParagrapheSet);
+            return View(lrgSet.ToList());
         }
 
-        // GET: FournisseurSets/Details/5
+        // GET: LrgSets/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            LrgSet lrgSet = db.LrgSet.Find(id);
+            if (lrgSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(lrgSet);
         }
 
-        // GET: FournisseurSets/Create
+        // GET: LrgSets/Create
         public ActionResult Create()
         {
+            ViewBag.InfoParagraphe_NumPar = new SelectList(db.ParagrapheSet, "NumPar", "DescriptionPar");
             return View();
         }
 
-        // POST: FournisseurSets/Create
+        // POST: LrgSets/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdFournisseur,Nom,Adresse,RC_n,Patente_n,IF_n,CNSS_n,Compte_bancaire_n,ICE,Ville,Banque")] FournisseurSet fournisseurSet)
+        public ActionResult Create([Bind(Include = "CodeLrg,DescriptionLrg,NumLrg,InfoParagraphe_NumPar")] LrgSet lrgSet)
         {
             if (ModelState.IsValid)
             {
-                db.FournisseurSet.Add(fournisseurSet);
+                db.LrgSet.Add(lrgSet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(fournisseurSet);
+            ViewBag.InfoParagraphe_NumPar = new SelectList(db.ParagrapheSet, "NumPar", "DescriptionPar", lrgSet.InfoParagraphe_NumPar);
+            return View(lrgSet);
         }
 
-        // GET: FournisseurSets/Edit/5
+        // GET: LrgSets/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            LrgSet lrgSet = db.LrgSet.Find(id);
+            if (lrgSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            ViewBag.InfoParagraphe_NumPar = new SelectList(db.ParagrapheSet, "NumPar", "DescriptionPar", lrgSet.InfoParagraphe_NumPar);
+            return View(lrgSet);
         }
 
-        // POST: FournisseurSets/Edit/5
+        // POST: LrgSets/Edit/5
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdFournisseur,Nom,Adresse,RC_n,Patente_n,IF_n,CNSS_n,Compte_bancaire_n,ICE,Ville,Banque")] FournisseurSet fournisseurSet)
+        public ActionResult Edit([Bind(Include = "CodeLrg,DescriptionLrg,NumLrg,InfoParagraphe_NumPar")] LrgSet lrgSet)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(fournisseurSet).State = EntityState.Modified;
+                db.Entry(lrgSet).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(fournisseurSet);
+            ViewBag.InfoParagraphe_NumPar = new SelectList(db.ParagrapheSet, "NumPar", "DescriptionPar", lrgSet.InfoParagraphe_NumPar);
+            return View(lrgSet);
         }
 
-        // GET: FournisseurSets/Delete/5
+        // GET: LrgSets/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            LrgSet lrgSet = db.LrgSet.Find(id);
+            if (lrgSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(lrgSet);
         }
 
-        // POST: FournisseurSets/Delete/5
+        // POST: LrgSets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            db.FournisseurSet.Remove(fournisseurSet);
+            LrgSet lrgSet = db.LrgSet.Find(id);
+            db.LrgSet.Remove(lrgSet);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

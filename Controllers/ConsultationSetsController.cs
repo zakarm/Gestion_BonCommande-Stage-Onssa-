@@ -10,107 +10,107 @@ using Projet_Onssa_Web_Mvc.Models;
 
 namespace Projet_Onssa_Web_Mvc.Controllers
 {
-    public class FournisseurSetsController : Controller
+    public class ConsultationSetsController : Controller
     {
         private Onssa_ProjetEntities db = new Onssa_ProjetEntities();
 
-        // GET: FournisseurSets
+        // GET: ConsultationSets
         public ActionResult Index()
         {
-            return View(db.FournisseurSet.ToList());
+            return View(db.ConsultationSet.ToList());
         }
 
-        // GET: FournisseurSets/Details/5
+        // GET: ConsultationSets/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            ConsultationSet consultationSet = db.ConsultationSet.Find(id);
+            if (consultationSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(consultationSet);
         }
 
-        // GET: FournisseurSets/Create
+        // GET: ConsultationSets/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FournisseurSets/Create
+        // POST: ConsultationSets/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdFournisseur,Nom,Adresse,RC_n,Patente_n,IF_n,CNSS_n,Compte_bancaire_n,ICE,Ville,Banque")] FournisseurSet fournisseurSet)
+        public ActionResult Create([Bind(Include = "IdConsultation,ObjetConsultation,NumConsultation")] ConsultationSet consultationSet)
         {
             if (ModelState.IsValid)
             {
-                db.FournisseurSet.Add(fournisseurSet);
+                db.ConsultationSet.Add(consultationSet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(fournisseurSet);
+            return View(consultationSet);
         }
 
-        // GET: FournisseurSets/Edit/5
+        // GET: ConsultationSets/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            ConsultationSet consultationSet = db.ConsultationSet.Find(id);
+            if (consultationSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(consultationSet);
         }
 
-        // POST: FournisseurSets/Edit/5
+        // POST: ConsultationSets/Edit/5
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdFournisseur,Nom,Adresse,RC_n,Patente_n,IF_n,CNSS_n,Compte_bancaire_n,ICE,Ville,Banque")] FournisseurSet fournisseurSet)
+        public ActionResult Edit([Bind(Include = "IdConsultation,ObjetConsultation,NumConsultation")] ConsultationSet consultationSet)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(fournisseurSet).State = EntityState.Modified;
+                db.Entry(consultationSet).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(fournisseurSet);
+            return View(consultationSet);
         }
 
-        // GET: FournisseurSets/Delete/5
+        // GET: ConsultationSets/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            ConsultationSet consultationSet = db.ConsultationSet.Find(id);
+            if (consultationSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(consultationSet);
         }
 
-        // POST: FournisseurSets/Delete/5
+        // POST: ConsultationSets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            db.FournisseurSet.Remove(fournisseurSet);
+            ConsultationSet consultationSet = db.ConsultationSet.Find(id);
+            db.ConsultationSet.Remove(consultationSet);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

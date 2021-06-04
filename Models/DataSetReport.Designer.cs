@@ -9802,7 +9802,7 @@ SELECT IdBC, NumBc, Destination, DelaiExecution, DateBC, InfoMorasse_Code, InfoP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10166,7 +10166,7 @@ SELECT IdFE, CreditsBudgetaires, DepensesEngagees, Disponible, EngagementDepense
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10501,7 +10501,7 @@ SELECT IdOP, NumOP, DateOP, InfoOI_IdOI FROM OPSet WHERE (IdOP = @IdOP)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10874,7 +10874,7 @@ SELECT IdOI, NumOi, DateOI, NumCompteDebit, VisaControle, VisaCsrs, DatePaiement
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11267,7 +11267,7 @@ SELECT Code, Exercice, Budget, PAR, LRG, Description FROM MorasseSet WHERE (Code
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11606,7 +11606,7 @@ SELECT ListModeleDevis_IdModeleDevis, ListProduit_IdProduit FROM ModeleDevisProd
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11922,7 +11922,7 @@ SELECT IdConsultation, ObjetConsultation, NumConsultation, DateLettre, DateDelai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12293,7 +12293,7 @@ SELECT IdCommission, Nom, Prenom, Fonction, Affectation FROM CommissionSet WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12700,7 +12700,7 @@ SELECT ListPVJ_IdPVJ, ListCommissions_IdCommission FROM PVJCommission WHERE (Lis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13010,7 +13010,7 @@ SELECT IdPVJ, DatePvj, NumPvj, InfoConsultation_IdConsultation, InfoFournisseur_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13362,7 +13362,7 @@ SELECT ListPVJ1_IdPVJ, ListFournisseursRepondu_IdFournisseur FROM PVJFournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13663,7 +13663,7 @@ SELECT ListCommission_IdCommission, ListPVR_IdPVR FROM CommissionPVR WHERE (List
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13970,7 +13970,7 @@ SELECT IdPVR, DatePVR, NumPvr, InfoOI_IdOI FROM PVRSet WHERE (IdPVR = @IdPVR)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14315,7 +14315,7 @@ SELECT IdFournisseur, Nom, Adresse, RC_n, Patente_n, IF_n, CNSS_n, Compte_bancai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14785,7 +14785,7 @@ SELECT IdProduit, Designation, Unite, Quantite, Prix_Unitaire, Prix_Total FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15155,7 +15155,7 @@ SELECT IdOV, NumOV, SousOrdonnateur, TresorierPayeur, InfoOP_IdOP FROM OVSet WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15522,7 +15522,7 @@ SELECT ListConsultation_IdConsultation, ListFournisseur_IdFournisseur FROM Consu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15848,7 +15848,7 @@ SELECT IdModeleDevis, NumDevis, Date, Total, Tva, Ttc, InfoFournisseur_IdFournis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projet_Onssa.Properties.Settings.Default.Onssa_DbConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Onssa_DbConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

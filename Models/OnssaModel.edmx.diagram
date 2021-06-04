@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18d1c169e36641abbcef32889cb18e68" Name="Diagram1">
+        <EntityTypeShape EntityType="Onssa_ProjetModel.BCSet" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.CommissionSet" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.ConsultationSet" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.FESet" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.FournisseurSet" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.GestionCompteSet" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.LigneSet" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.LrgSet" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.ModeleDevisSet" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.MorasseSet" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.OISet" Width="1.5" PointX="15" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.OPSet" Width="1.5" PointX="17.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.OVSet" Width="1.5" PointX="19.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.ParagrapheSet" Width="1.5" PointX="1.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.ProduitSet" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.PVJSet" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Onssa_ProjetModel.PVRSet" Width="1.5" PointX="17.25" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_BCFE" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_BCMorasse" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_PVJBC" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_ModeleDevisConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_PVJConsultation" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_FEOI" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_ModeleDevisFournisseur" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_PVJFournisseur1" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_LigneLrg" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_MorasseLigne" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_ParagrapheLrg" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_OIOP" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_OIPVR" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.FK_OVOP" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.CommissionPVR" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.ConsultationFournisseur" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.ModeleDevisProduit" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.PVJCommission" ManuallyRouted="false" />
+        <AssociationConnector Association="Onssa_ProjetModel.PVJFournisseur" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1786,13 +1786,25 @@
     <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="Content\vendor\jquery\jquery.slim.js" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Models\OnssaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnssaModel.edmx</DependentUpon>
+      <LastGenOutput>OnssaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OnssaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnssaModel.edmx</DependentUpon>
+      <LastGenOutput>OnssaModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
     <Compile Include="Controllers\CommissionSetsController.cs" />
+    <Compile Include="Controllers\ConsultationSetsController.cs" />
     <Compile Include="Controllers\FournisseurSetsController.cs" />
+    <Compile Include="Controllers\LrgSetsController.cs" />
     <Compile Include="CrystalReports\CrystalReportBC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1850,9 +1862,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BCSet.cs" />
-    <Compile Include="Models\CommissionSet.cs" />
-    <Compile Include="Models\ConsultationSet.cs" />
+    <Compile Include="Models\BCSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommissionSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConsultationSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataSetPvj.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1863,23 +1881,65 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetReport.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Models\FESet.cs" />
-    <Compile Include="Models\FournisseurSet.cs" />
-    <Compile Include="Models\GestionCompteSet.cs" />
-    <Compile Include="Models\LettreConsultationSet.cs" />
-    <Compile Include="Models\LigneSet.cs" />
-    <Compile Include="Models\LrgSet.cs" />
-    <Compile Include="Models\ModeleDevisSet.cs" />
-    <Compile Include="Models\MorasseSet.cs" />
-    <Compile Include="Models\OISet.cs" />
-    <Compile Include="Models\Onssa Model.cs" />
-    <Compile Include="Models\OPSet.cs" />
-    <Compile Include="Models\OVSet.cs" />
-    <Compile Include="Models\ParagrapheSet.cs" />
-    <Compile Include="Models\ProduitSet.cs" />
-    <Compile Include="Models\PVJSet.cs" />
-    <Compile Include="Models\PVRSet.cs" />
+    <Compile Include="Models\FESet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FournisseurSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GestionCompteSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LigneSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LrgSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeleDevisSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MorasseSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OISet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnssaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnssaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnssaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnssaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnssaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OVSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParagrapheSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduitSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PVJSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PVRSet.cs">
+      <DependentUpon>OnssaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\LectureConsultationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -1907,6 +1967,13 @@
     </None>
     <Content Include="Models\DataSetReport.xss">
       <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\OnssaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OnssaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\OnssaModel.edmx.diagram">
+      <DependentUpon>OnssaModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -2092,6 +2159,12 @@
     <Content Include="Views\CommissionSets\Delete.cshtml" />
     <Content Include="Views\CommissionSets\Edit.cshtml" />
     <Content Include="Views\CommissionSets\Index.cshtml" />
+    <Content Include="Views\LectureConsultation\LectureConsultation.cshtml" />
+    <Content Include="Views\LrgSets\Create.cshtml" />
+    <Content Include="Views\LrgSets\Delete.cshtml" />
+    <Content Include="Views\LrgSets\Details.cshtml" />
+    <Content Include="Views\LrgSets\Edit.cshtml" />
+    <Content Include="Views\LrgSets\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2103,6 +2176,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
