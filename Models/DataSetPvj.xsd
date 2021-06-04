@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetPvj" targetNamespace="http://tempuri.org/DataSetPvj.xsd" xmlns:mstns="http://tempuri.org/DataSetPvj.xsd" xmlns="http://tempuri.org/DataSetPvj.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetPvj" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetPvj" msprop:Generator_UserDSName="DataSetPvj">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FournisseurReponduSet" msprop:Generator_TableClassName="FournisseurReponduSetDataTable" msprop:Generator_TableVarName="tableFournisseurReponduSet" msprop:Generator_TablePropName="FournisseurReponduSet" msprop:Generator_RowDeletingName="FournisseurReponduSetRowDeleting" msprop:Generator_RowChangingName="FournisseurReponduSetRowChanging" msprop:Generator_RowEvHandlerName="FournisseurReponduSetRowChangeEventHandler" msprop:Generator_RowDeletedName="FournisseurReponduSetRowDeleted" msprop:Generator_UserTableName="FournisseurReponduSet" msprop:Generator_RowChangedName="FournisseurReponduSetRowChanged" msprop:Generator_RowEvArgName="FournisseurReponduSetRowChangeEvent" msprop:Generator_RowClassName="FournisseurReponduSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FournisseurCon" msprop:Generator_TableClassName="FournisseurConDataTable" msprop:Generator_TableVarName="tableFournisseurCon" msprop:Generator_TablePropName="FournisseurCon" msprop:Generator_RowDeletingName="FournisseurConRowDeleting" msprop:Generator_RowChangingName="FournisseurConRowChanging" msprop:Generator_RowEvHandlerName="FournisseurConRowChangeEventHandler" msprop:Generator_RowDeletedName="FournisseurConRowDeleted" msprop:Generator_UserTableName="FournisseurCon" msprop:Generator_RowChangedName="FournisseurConRowChanged" msprop:Generator_RowEvArgName="FournisseurConRowChangeEvent" msprop:Generator_RowClassName="FournisseurConRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Devis" msprop:Generator_TableClassName="DevisDataTable" msprop:Generator_TableVarName="tableDevis" msprop:Generator_TablePropName="Devis" msprop:Generator_RowDeletingName="DevisRowDeleting" msprop:Generator_RowChangingName="DevisRowChanging" msprop:Generator_RowEvHandlerName="DevisRowChangeEventHandler" msprop:Generator_RowDeletedName="DevisRowDeleted" msprop:Generator_UserTableName="Devis" msprop:Generator_RowChangedName="DevisRowChanged" msprop:Generator_RowEvArgName="DevisRowChangeEvent" msprop:Generator_RowClassName="DevisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" minOccurs="0" />
+              <xs:element name="Devis" msprop:Generator_ColumnVarNameInTable="columnDevis" msprop:Generator_ColumnPropNameInRow="Devis" msprop:Generator_ColumnPropNameInTable="DevisColumn" msprop:Generator_UserColumnName="Devis" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Ttc" msprop:Generator_ColumnVarNameInTable="columnTtc" msprop:Generator_ColumnPropNameInRow="Ttc" msprop:Generator_ColumnPropNameInTable="TtcColumn" msprop:Generator_UserColumnName="Ttc" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CommissionSet" msprop:Generator_TableClassName="CommissionSetDataTable" msprop:Generator_TableVarName="tableCommissionSet" msprop:Generator_TablePropName="CommissionSet" msprop:Generator_RowDeletingName="CommissionSetRowDeleting" msprop:Generator_RowChangingName="CommissionSetRowChanging" msprop:Generator_RowEvHandlerName="CommissionSetRowChangeEventHandler" msprop:Generator_RowDeletedName="CommissionSetRowDeleted" msprop:Generator_UserTableName="CommissionSet" msprop:Generator_RowChangedName="CommissionSetRowChanged" msprop:Generator_RowEvArgName="CommissionSetRowChangeEvent" msprop:Generator_RowClassName="CommissionSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCommission" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCommission" msprop:Generator_ColumnPropNameInRow="IdCommission" msprop:Generator_ColumnPropNameInTable="IdCommissionColumn" msprop:Generator_UserColumnName="IdCommission" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prenom" msprop:Generator_ColumnVarNameInTable="columnPrenom" msprop:Generator_ColumnPropNameInRow="Prenom" msprop:Generator_ColumnPropNameInTable="PrenomColumn" msprop:Generator_UserColumnName="Prenom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fonction" msprop:Generator_ColumnVarNameInTable="columnFonction" msprop:Generator_ColumnPropNameInRow="Fonction" msprop:Generator_ColumnPropNameInTable="FonctionColumn" msprop:Generator_UserColumnName="Fonction">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Affectation" msprop:Generator_ColumnVarNameInTable="columnAffectation" msprop:Generator_ColumnPropNameInRow="Affectation" msprop:Generator_ColumnPropNameInTable="AffectationColumn" msprop:Generator_UserColumnName="Affectation">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CommissionSet" />
+      <xs:field xpath="mstns:IdCommission" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

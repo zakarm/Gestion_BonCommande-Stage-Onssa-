@@ -1853,6 +1853,11 @@
     <Compile Include="Models\BCSet.cs" />
     <Compile Include="Models\CommissionSet.cs" />
     <Compile Include="Models\ConsultationSet.cs" />
+    <Compile Include="Models\DataSetPvj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPvj.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataSetReport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1884,10 +1889,21 @@
     <Content Include="Models\DataSetReport.xsc">
       <DependentUpon>DataSetReport.xsd</DependentUpon>
     </Content>
-    <None Include="Models\DataSetReport.xsd">
+    <Content Include="Models\DataSetPvj.xsc">
+      <DependentUpon>DataSetPvj.xsd</DependentUpon>
+    </Content>
+    <None Include="Models\DataSetPvj.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPvj.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <Content Include="Models\DataSetPvj.xss">
+      <DependentUpon>DataSetPvj.xsd</DependentUpon>
+    </Content>
+    <None Include="Models\DataSetReport.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <Content Include="Models\DataSetReport.xss">
       <DependentUpon>DataSetReport.xsd</DependentUpon>
