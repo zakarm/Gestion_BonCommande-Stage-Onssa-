@@ -165,4 +165,3 @@ C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\obj\Debug\Projet_Onssa_
 C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\obj\Debug\Projet_Onssa_Web_Mvc.dll
 C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\obj\Debug\Projet_Onssa_Web_Mvc.pdb
 C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\obj\Debug\Projet_Onssa_Web_Mvc.csprojAssemblyReference.cache
-C:\Users\lenovo\Desktop\Stage\Projet_Onssa_Web_Mvc\obj\Debug\Projet_Onssa_Web_Mvc.csprojAssemblyReference.cache
