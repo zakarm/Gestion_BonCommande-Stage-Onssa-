@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Projet_Onssa_Web_Mvc.Models.BCSet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="padding:50px;">
+
+
+    <h2>Bon de commande </h2>
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumBc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DelaiExecution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateBC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoMorasse.Exercice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoPVJ.NumPvj)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumBc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelaiExecution)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateBC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoMorasse.Exercice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoPVJ.NumPvj)
+                </td>
+                <td>
+                    @Html.ActionLink("Export", "Export", new { id = item.IdBC })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

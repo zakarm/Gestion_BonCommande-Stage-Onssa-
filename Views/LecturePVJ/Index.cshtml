@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Projet_Onssa_Web_Mvc.Models.PVJSet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div style="padding:50px;">
+
+    <h2>Lecture procès verbal de jugement </h2>
+    <br />
+    <br />
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePvj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumPvj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoConsultation.ObjetConsultation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoFournisseur.Nom)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatePvj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumPvj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoConsultation.ObjetConsultation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoFournisseur.Nom)
+                </td>
+                <td>
+                    @Html.ActionLink("Export", "Export", new { id = item.IdPVJ }) 
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

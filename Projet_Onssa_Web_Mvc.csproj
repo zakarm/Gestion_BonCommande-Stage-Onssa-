@@ -1802,10 +1802,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
+    <Compile Include="Controllers\LectureBCController.cs" />
     <Compile Include="Controllers\CommissionController.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
+    <Compile Include="Controllers\LectureFEController.cs" />
     <Compile Include="Controllers\GestionCompteSetsController.cs" />
     <Compile Include="Controllers\LectureOIController.cs" />
+    <Compile Include="Controllers\LecturePVRController.cs" />
+    <Compile Include="Controllers\LecturePVJController.cs" />
     <Compile Include="Models\DateToString.cs" />
     <Compile Include="Controllers\FournisseurController.cs" />
     <Compile Include="Controllers\LectureOVController.cs" />
@@ -2172,6 +2176,10 @@
     <Content Include="Views\LectureOP\Index.cshtml" />
     <Content Include="Views\LectureOI\Index.cshtml" />
     <Content Include="Views\GestionCompteSets\Create.cshtml" />
+    <Content Include="Views\LectureFE\Index.cshtml" />
+    <Content Include="Views\LectureBC\Index.cshtml" />
+    <Content Include="Views\LecturePVR\Index.cshtml" />
+    <Content Include="Views\LecturePVJ\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

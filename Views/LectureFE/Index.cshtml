@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Projet_Onssa_Web_Mvc.Models.FESet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="padding:50px;">
+
+
+    <h2>Fiche d'engagement </h2>
+    <br />
+    <br /> 
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditsBudgetaires)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepensesEngagees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disponible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EngagementDepensesPropose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumFe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InfoBC.NumBc)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditsBudgetaires)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepensesEngagees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disponible)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EngagementDepensesPropose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumFe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoBC.NumBc)
+                </td>
+                <td>
+                    @Html.ActionLink("Export", "Export", new { id = item.IdFE }) 
+                </td>
+            </tr>
+        }
+
+    </table>
+
+  </div>
