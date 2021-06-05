@@ -92,12 +92,15 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item" href="">Consultation</a>
-                            <a class="collapse-item" href="">Modele Devis</a>
-                            <a class="collapse-item" href="">Procès verbal de jugement</a>
-                            <a class="collapse-item" href="">Bon de commande</a>
-                            <a class="collapse-item" href="">Fiche d'engagement</a>
-                            <a class="collapse-item" href="">Ordre d'imputation</a>
+                            @Html.ActionLink("Consultation", "Index", "LectureConsultation", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Modele Devis", "Index", "LectureModeleDevis", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Procès verbal de J", "Index", "LecturePVJ", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Bon de commande", "Index", "LectureConsultation", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Fiche d'engagement", "Index", "LectureFE", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Ordre d'imputation", "Index", "LectureOI", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Procès verbal de R", "Index", "LecturePVR", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Ordre de paiement", "Index", "LectureOP", null, new { @class = "collapse-item" })
+                            @Html.ActionLink("Ordre de virement", "Index", "LectureOV", null, new { @class = "collapse-item" })
                         </div>
                     </div>
                 </li>
