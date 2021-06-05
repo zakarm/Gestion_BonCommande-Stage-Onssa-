@@ -20,8 +20,6 @@ namespace Projet_Onssa_Web_Mvc.Controllers
 {
     public class LectureOVController : Controller
     {
-
-
         private Onssa_ProjetEntities db = new Onssa_ProjetEntities();
 
         // GET: OVSets
@@ -55,7 +53,6 @@ namespace Projet_Onssa_Web_Mvc.Controllers
             base.Dispose(disposing);
         }
 
-
         public ActionResult Export(int? id)
         {
             var query = from ov in db.OVSet
@@ -81,11 +78,12 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                             banque = fr.Banque,
                         };
 
-            ReportDocument ce = new ReportDocument();
-            ce.Load(Path.Combine(Server.MapPath("~/CrystalReports"), "CrystalReportOv.rpt"));
+           ReportDocument ce = new ReportDocument();
+           ce.Load(Path.Combine(Server.MapPath("~/CrystalReports"), "CrystalReportOv.rpt"));
 
             if (query.FirstOrDefault() != null)
-            {
+            { 
+                
                 ce.SetParameterValue("ttc", query.FirstOrDefault().ttc.ToString());
                 ce.SetParameterValue("nom", query.FirstOrDefault().nom.ToString());
                 ce.SetParameterValue("compte", query.FirstOrDefault().compte.ToString());

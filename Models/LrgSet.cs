@@ -27,6 +27,6 @@ namespace Projet_Onssa_Web_Mvc.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LigneSet> LigneSet { get; set; }
-        public virtual ParagrapheSet ParagrapheSet { get; set; }
+        public virtual ParagrapheSet InfoParagraphe { get; set; }
     }
 }

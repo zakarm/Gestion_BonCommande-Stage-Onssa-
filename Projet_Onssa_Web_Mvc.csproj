@@ -1804,8 +1804,11 @@
     <Compile Include="Controllers\AccueilController.cs" />
     <Compile Include="Controllers\CommissionController.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
+    <Compile Include="Controllers\LectureOIController.cs" />
+    <Compile Include="Models\DateToString.cs" />
     <Compile Include="Controllers\FournisseurController.cs" />
     <Compile Include="Controllers\LectureOVController.cs" />
+    <Compile Include="Models\NumToString.cs" />
     <Compile Include="CrystalReports\CrystalReportBC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1941,6 +1944,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\LectureConsultationController.cs" />
+    <Compile Include="Controllers\LectureOPController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -2164,6 +2168,8 @@
     <Content Include="Views\Connexion\Connexion.cshtml" />
     <Content Include="Views\LectureConsultation\GetFList.cshtml" />
     <Content Include="Views\LectureOV\Index.cshtml" />
+    <Content Include="Views\LectureOP\Index.cshtml" />
+    <Content Include="Views\LectureOI\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

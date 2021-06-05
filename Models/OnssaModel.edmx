@@ -730,7 +730,7 @@
           <Property Name="CodeLigne" Type="Int32" Nullable="false" />
           <Property Name="DescriptionLigne" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InfoLrg_CodeLrg" Type="Int32" />
-          <NavigationProperty Name="LrgSet" Relationship="Self.FK_LigneLrg" FromRole="LigneSet" ToRole="LrgSet" />
+          <NavigationProperty Name="InfoLrg" Relationship="Self.FK_LigneLrg" FromRole="LigneSet" ToRole="LrgSet" />
           <NavigationProperty Name="MorasseSet" Relationship="Self.FK_MorasseLigne" FromRole="LigneSet" ToRole="MorasseSet" />
         </EntityType>
         <EntityType Name="LrgSet">
@@ -742,7 +742,7 @@
           <Property Name="NumLrg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InfoParagraphe_NumPar" Type="Int32" />
           <NavigationProperty Name="LigneSet" Relationship="Self.FK_LigneLrg" FromRole="LrgSet" ToRole="LigneSet" />
-          <NavigationProperty Name="ParagrapheSet" Relationship="Self.FK_ParagrapheLrg" FromRole="LrgSet" ToRole="ParagrapheSet" />
+          <NavigationProperty Name="InfoParagraphe" Relationship="Self.FK_ParagrapheLrg" FromRole="LrgSet" ToRole="ParagrapheSet" />
         </EntityType>
         <EntityType Name="ModeleDevisSet">
           <Key>
@@ -770,7 +770,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ligne_CodeLigne" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BCSet" Relationship="Self.FK_BCMorasse" FromRole="MorasseSet" ToRole="BCSet" />
-          <NavigationProperty Name="LigneSet" Relationship="Self.FK_MorasseLigne" FromRole="MorasseSet" ToRole="LigneSet" />
+          <NavigationProperty Name="Ligne" Relationship="Self.FK_MorasseLigne" FromRole="MorasseSet" ToRole="LigneSet" />
         </EntityType>
         <EntityType Name="OISet">
           <Key>
