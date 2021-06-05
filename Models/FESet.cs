@@ -28,7 +28,7 @@ namespace Projet_Onssa_Web_Mvc.Models
         public string NumFe { get; set; }
         public int InfoBC_IdBC { get; set; }
     
-        public virtual BCSet BCSet { get; set; }
+        public virtual BCSet InfoBC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OISet> OISet { get; set; }
     }

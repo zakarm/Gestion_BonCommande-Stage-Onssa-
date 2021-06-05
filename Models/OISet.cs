@@ -32,7 +32,7 @@ namespace Projet_Onssa_Web_Mvc.Models
         public string VisaTresorierPayeur { get; set; }
         public int InfoFE_IdFE { get; set; }
     
-        public virtual FESet FESet { get; set; }
+        public virtual FESet InfoFE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OPSet> OPSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

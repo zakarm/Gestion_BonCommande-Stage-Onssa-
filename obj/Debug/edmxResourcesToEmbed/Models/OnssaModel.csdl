@@ -12,8 +12,8 @@
     <Property Name="InfoMorasse_CodeMorasse" Type="Int32" Nullable="false" />
     <Property Name="InfoPVJ_IdPVJ" Type="Int32" Nullable="false" />
     <NavigationProperty Name="FESet" Relationship="Self.FK_BCFE" FromRole="BCSet" ToRole="FESet" />
-    <NavigationProperty Name="MorasseSet" Relationship="Self.FK_BCMorasse" FromRole="BCSet" ToRole="MorasseSet" />
-    <NavigationProperty Name="PVJSet" Relationship="Self.FK_PVJBC" FromRole="BCSet" ToRole="PVJSet" />
+    <NavigationProperty Name="InfoMorasse" Relationship="Self.FK_BCMorasse" FromRole="BCSet" ToRole="MorasseSet" />
+    <NavigationProperty Name="InfoPVJ" Relationship="Self.FK_PVJBC" FromRole="BCSet" ToRole="PVJSet" />
   </EntityType>
   <EntityType Name="CommissionSet">
     <Key>
@@ -37,9 +37,9 @@
     <Property Name="DateLettre" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateDelai" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="NumEnvoi" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ModeleDevisSet" Relationship="Self.FK_ModeleDevisConsultation" FromRole="ConsultationSet" ToRole="ModeleDevisSet" />
+    <NavigationProperty Name="ListModeleDevis" Relationship="Self.FK_ModeleDevisConsultation" FromRole="ConsultationSet" ToRole="ModeleDevisSet" />
     <NavigationProperty Name="PVJSet" Relationship="Self.FK_PVJConsultation" FromRole="ConsultationSet" ToRole="PVJSet" />
-    <NavigationProperty Name="FournisseurSet" Relationship="Self.ConsultationFournisseur" FromRole="ConsultationSet" ToRole="FournisseurSet" />
+    <NavigationProperty Name="ListFournisseur" Relationship="Self.ConsultationFournisseur" FromRole="ConsultationSet" ToRole="FournisseurSet" />
   </EntityType>
   <EntityType Name="FESet">
     <Key>
@@ -52,7 +52,7 @@
     <Property Name="EngagementDepensesPropose" Type="Int32" Nullable="false" />
     <Property Name="NumFe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="InfoBC_IdBC" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="BCSet" Relationship="Self.FK_BCFE" FromRole="FESet" ToRole="BCSet" />
+    <NavigationProperty Name="InfoBC" Relationship="Self.FK_BCFE" FromRole="FESet" ToRole="BCSet" />
     <NavigationProperty Name="OISet" Relationship="Self.FK_FEOI" FromRole="FESet" ToRole="OISet" />
   </EntityType>
   <EntityType Name="FournisseurSet">
@@ -117,8 +117,8 @@
     <Property Name="Ttc" Type="Double" Nullable="false" />
     <Property Name="InfoFournisseur_IdFournisseur" Type="Int32" Nullable="false" />
     <Property Name="InfoConsultation_IdConsultation" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ConsultationSet" Relationship="Self.FK_ModeleDevisConsultation" FromRole="ModeleDevisSet" ToRole="ConsultationSet" />
-    <NavigationProperty Name="FournisseurSet" Relationship="Self.FK_ModeleDevisFournisseur" FromRole="ModeleDevisSet" ToRole="FournisseurSet" />
+    <NavigationProperty Name="InfoConsultation" Relationship="Self.FK_ModeleDevisConsultation" FromRole="ModeleDevisSet" ToRole="ConsultationSet" />
+    <NavigationProperty Name="InfoFournisseur" Relationship="Self.FK_ModeleDevisFournisseur" FromRole="ModeleDevisSet" ToRole="FournisseurSet" />
     <NavigationProperty Name="ProduitSet" Relationship="Self.ModeleDevisProduit" FromRole="ModeleDevisSet" ToRole="ProduitSet" />
   </EntityType>
   <EntityType Name="MorasseSet">
@@ -147,7 +147,7 @@
     <Property Name="VisaSordonnateur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="VisaTresorierPayeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="InfoFE_IdFE" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="FESet" Relationship="Self.FK_FEOI" FromRole="OISet" ToRole="FESet" />
+    <NavigationProperty Name="InfoFE" Relationship="Self.FK_FEOI" FromRole="OISet" ToRole="FESet" />
     <NavigationProperty Name="OPSet" Relationship="Self.FK_OIOP" FromRole="OISet" ToRole="OPSet" />
     <NavigationProperty Name="PVRSet" Relationship="Self.FK_OIPVR" FromRole="OISet" ToRole="PVRSet" />
   </EntityType>
@@ -159,7 +159,7 @@
     <Property Name="NumOP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateOP" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="InfoOI_IdOI" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="OISet" Relationship="Self.FK_OIOP" FromRole="OPSet" ToRole="OISet" />
+    <NavigationProperty Name="InfoOI" Relationship="Self.FK_OIOP" FromRole="OPSet" ToRole="OISet" />
     <NavigationProperty Name="OVSet" Relationship="Self.FK_OVOP" FromRole="OPSet" ToRole="OVSet" />
   </EntityType>
   <EntityType Name="OVSet">
@@ -171,7 +171,7 @@
     <Property Name="SousOrdonnateur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TresorierPayeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="InfoOP_IdOP" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="OPSet" Relationship="Self.FK_OVOP" FromRole="OVSet" ToRole="OPSet" />
+    <NavigationProperty Name="InfoOP" Relationship="Self.FK_OVOP" FromRole="OVSet" ToRole="OPSet" />
   </EntityType>
   <EntityType Name="ParagrapheSet">
     <Key>
@@ -203,8 +203,8 @@
     <Property Name="InfoConsultation_IdConsultation" Type="Int32" Nullable="false" />
     <Property Name="InfoFournisseur_IdFournisseur" Type="Int32" Nullable="false" />
     <NavigationProperty Name="BCSet" Relationship="Self.FK_PVJBC" FromRole="PVJSet" ToRole="BCSet" />
-    <NavigationProperty Name="ConsultationSet" Relationship="Self.FK_PVJConsultation" FromRole="PVJSet" ToRole="ConsultationSet" />
-    <NavigationProperty Name="FournisseurSet" Relationship="Self.FK_PVJFournisseur1" FromRole="PVJSet" ToRole="FournisseurSet" />
+    <NavigationProperty Name="InfoConsultation" Relationship="Self.FK_PVJConsultation" FromRole="PVJSet" ToRole="ConsultationSet" />
+    <NavigationProperty Name="InfoFournisseur" Relationship="Self.FK_PVJFournisseur1" FromRole="PVJSet" ToRole="FournisseurSet" />
     <NavigationProperty Name="CommissionSet" Relationship="Self.PVJCommission" FromRole="PVJSet" ToRole="CommissionSet" />
     <NavigationProperty Name="FournisseurSet1" Relationship="Self.PVJFournisseur" FromRole="PVJSet" ToRole="FournisseurSet" />
   </EntityType>
@@ -216,7 +216,7 @@
     <Property Name="DatePVR" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="NumPvr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="InfoOI_IdOI" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="OISet" Relationship="Self.FK_OIPVR" FromRole="PVRSet" ToRole="OISet" />
+    <NavigationProperty Name="InfoOI" Relationship="Self.FK_OIPVR" FromRole="PVRSet" ToRole="OISet" />
     <NavigationProperty Name="CommissionSet" Relationship="Self.CommissionPVR" FromRole="PVRSet" ToRole="CommissionSet" />
   </EntityType>
   <Association Name="FK_BCFE">

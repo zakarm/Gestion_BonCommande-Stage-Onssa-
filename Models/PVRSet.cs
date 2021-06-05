@@ -25,7 +25,7 @@ namespace Projet_Onssa_Web_Mvc.Models
         public string NumPvr { get; set; }
         public int InfoOI_IdOI { get; set; }
     
-        public virtual OISet OISet { get; set; }
+        public virtual OISet InfoOI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommissionSet> CommissionSet { get; set; }
     }

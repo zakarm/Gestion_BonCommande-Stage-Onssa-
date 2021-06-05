@@ -17,9 +17,9 @@ namespace Projet_Onssa_Web_Mvc.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ConsultationSet()
         {
-            this.ModeleDevisSet = new HashSet<ModeleDevisSet>();
+            this.ListModeleDevis = new HashSet<ModeleDevisSet>();
             this.PVJSet = new HashSet<PVJSet>();
-            this.FournisseurSet = new HashSet<FournisseurSet>();
+            this.ListFournisseur = new HashSet<FournisseurSet>();
         }
     
         public int IdConsultation { get; set; }
@@ -30,10 +30,10 @@ namespace Projet_Onssa_Web_Mvc.Models
         public int NumEnvoi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ModeleDevisSet> ModeleDevisSet { get; set; }
+        public virtual ICollection<ModeleDevisSet> ListModeleDevis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PVJSet> PVJSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FournisseurSet> FournisseurSet { get; set; }
+        public virtual ICollection<FournisseurSet> ListFournisseur { get; set; }
     }
 }

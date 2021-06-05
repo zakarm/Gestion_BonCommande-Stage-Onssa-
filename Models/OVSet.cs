@@ -20,6 +20,6 @@ namespace Projet_Onssa_Web_Mvc.Models
         public string TresorierPayeur { get; set; }
         public int InfoOP_IdOP { get; set; }
     
-        public virtual OPSet OPSet { get; set; }
+        public virtual OPSet InfoOP { get; set; }
     }
 }

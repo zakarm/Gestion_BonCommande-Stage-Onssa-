@@ -24,10 +24,10 @@ namespace Projet_Onssa_Web_Mvc.Controllers
 
             //
             var data = from bc in ctx.BCSet
-                       join pvj in ctx.PVJSet on bc.PVJSet.IdPVJ equals pvj.IdPVJ
-                       join m in ctx.ModeleDevisSet on pvj.FournisseurSet.IdFournisseur equals
-                       m.FournisseurSet.IdFournisseur
-                       where m.ConsultationSet.IdConsultation == pvj.ConsultationSet.IdConsultation && bc.DateBC.Month.Equals(DateTime.Today.Month)
+                       join pvj in ctx.PVJSet on bc.InfoPVJ.IdPVJ equals pvj.IdPVJ
+                       join m in ctx.ModeleDevisSet on pvj.InfoFournisseur.IdFournisseur equals
+                       m.InfoFournisseur.IdFournisseur
+                       where m.InfoConsultation.IdConsultation == pvj.InfoConsultation.IdConsultation && bc.DateBC.Month.Equals(DateTime.Today.Month)
                        orderby bc.DateBC.Month ascending
                        select m;
             ViewBag.t=data.AsEnumerable().Sum(o => o.Ttc);

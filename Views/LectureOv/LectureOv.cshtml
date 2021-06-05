@@ -8,17 +8,19 @@
 
     @using (Html.BeginForm())
     {
-        <div class="form-horizontal">
+<div class="form-horizontal">
 
-            @Html.AntiForgeryToken()
-            <br />
-            <br />
-            <br />
-            @Html.DropDownList("Ov", null, htmlAttributes: new { @class = "form-control", onchange = "SelectedIndexChanged(this);" })
-            <br />
-            <br />
-            <br />
+    @Html.AntiForgeryToken()
 
-        </div>
+    <div><a href="@Url.Action("Export")"> Report PDF </a> </div>
+    <br />
+    <br />
+    <br />
+    @Html.DropDownList("Ov", null, htmlAttributes: new { @class = "form-control", onchange = "SelectedIndexChanged(this);" })
+    <br />
+    <br />
+    <br />
+
+</div>
     }
 </div>

@@ -30,8 +30,8 @@ namespace Projet_Onssa_Web_Mvc.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BCSet> BCSet { get; set; }
-        public virtual ConsultationSet ConsultationSet { get; set; }
-        public virtual FournisseurSet FournisseurSet { get; set; }
+        public virtual ConsultationSet InfoConsultation { get; set; }
+        public virtual FournisseurSet InfoFournisseur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommissionSet> CommissionSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
