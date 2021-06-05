@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Projet_Onssa_Web_Mvc.Models.ConsultationSet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="padding:50px;">
+
+    <h2>Consultation </h2>
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjetConsultation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumConsultation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateLettre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDelai)
+            </th>
+            <th>
+                @Html.DisplayName("Nom")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            foreach (var item2 in item.ListFournisseur)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ObjetConsultation)
+                        
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumConsultation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateLettre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateDelai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item2.Nom)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Export", "Export", new { id = item.IdConsultation , id2 = item2.IdFournisseur} )
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>

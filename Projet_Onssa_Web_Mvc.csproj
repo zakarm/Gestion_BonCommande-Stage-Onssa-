@@ -1802,6 +1802,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
+    <Compile Include="Controllers\LectureConsultationController.cs" />
     <Compile Include="Controllers\LectureBCController.cs" />
     <Compile Include="Controllers\CommissionController.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
@@ -1813,6 +1814,7 @@
     <Compile Include="Models\DateToString.cs" />
     <Compile Include="Controllers\FournisseurController.cs" />
     <Compile Include="Controllers\LectureOVController.cs" />
+    <Compile Include="Controllers\LectureModeleDevisController.cs" />
     <Compile Include="Models\NumToString.cs" />
     <Compile Include="CrystalReports\CrystalReportBC.cs">
       <AutoGen>True</AutoGen>
@@ -1948,7 +1950,6 @@
       <DependentUpon>OnssaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\LectureConsultationController.cs" />
     <Compile Include="Controllers\LectureOPController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2169,9 +2170,7 @@
     <Content Include="Views\Commission\Delete.cshtml" />
     <Content Include="Views\Commission\Edit.cshtml" />
     <Content Include="Views\Commission\Index.cshtml" />
-    <Content Include="Views\LectureConsultation\LectureConsultation.cshtml" />
     <Content Include="Views\Connexion\Connexion.cshtml" />
-    <Content Include="Views\LectureConsultation\GetFList.cshtml" />
     <Content Include="Views\LectureOV\Index.cshtml" />
     <Content Include="Views\LectureOP\Index.cshtml" />
     <Content Include="Views\LectureOI\Index.cshtml" />
@@ -2180,6 +2179,8 @@
     <Content Include="Views\LectureBC\Index.cshtml" />
     <Content Include="Views\LecturePVR\Index.cshtml" />
     <Content Include="Views\LecturePVJ\Index.cshtml" />
+    <Content Include="Views\LectureModeleDevis\Index.cshtml" />
+    <Content Include="Views\LectureConsultation\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
