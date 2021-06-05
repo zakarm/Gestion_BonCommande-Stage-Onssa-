@@ -66,16 +66,15 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                                 l = c.NumEnvoi
                             };
 
+
                 if (query.FirstOrDefault() != null)
                 {
-
                     int sum = query.FirstOrDefault().l + id2;
                     ce.SetDataSource(ds);
                     ce.SetParameterValue("nm", sum.ToString());
                     Response.Buffer = false;
                     Response.ClearContent();
                     Response.ClearHeaders();
-
                 }
             Stream stream = ce.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
             stream.Seek(0, SeekOrigin.Begin);
