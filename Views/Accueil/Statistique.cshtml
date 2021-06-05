@@ -41,9 +41,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)
+                                                Bon de commande du mois @DateTime.Today.Month
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.t</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.Dpns</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -60,9 +60,9 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                    Earnings (Annual)
+                                                    Dépenses du mois @DateTime.Today.Month
                                                 </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.Dpns</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.t</div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -109,7 +109,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests
+                                                Fournisseur Répondu (mois @DateTime.Today.Month)
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.count</div>
                                         </div>
