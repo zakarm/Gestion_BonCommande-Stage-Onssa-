@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Projet_Onssa_Web_Mvc.Models.OVSet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div style="padding:50px;">
+
+    <h2>Lecture Ordre de virement </h2>
+    <br />
+    <br />
+    
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumOV)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.SousOrdonnateur)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.TresorierPayeur)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.InfoOP.NumOP)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumOV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SousOrdonnateur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TresorierPayeur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InfoOP.NumOP)
+                </td>
+                <td>
+                    @Html.ActionLink("Export", "Export", new { id = item.IdOV }) 
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

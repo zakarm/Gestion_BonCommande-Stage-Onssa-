@@ -1802,11 +1802,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
-    <Compile Include="Controllers\CommissionSetsController.cs" />
+    <Compile Include="Controllers\CommissionController.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
-    <Compile Include="Controllers\FournisseurSetsController.cs" />
-    <Compile Include="Controllers\LectureOvController.cs" />
-    <Compile Include="Controllers\LrgSetsController.cs" />
+    <Compile Include="Controllers\FournisseurController.cs" />
+    <Compile Include="Controllers\LectureOVController.cs" />
     <Compile Include="CrystalReports\CrystalReportBC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2153,23 +2152,18 @@
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Accueil\Statistique.cshtml" />
-    <Content Include="Views\FournisseurSets\Create.cshtml" />
-    <Content Include="Views\FournisseurSets\Delete.cshtml" />
-    <Content Include="Views\FournisseurSets\Edit.cshtml" />
-    <Content Include="Views\FournisseurSets\Index.cshtml" />
-    <Content Include="Views\CommissionSets\Create.cshtml" />
-    <Content Include="Views\CommissionSets\Delete.cshtml" />
-    <Content Include="Views\CommissionSets\Edit.cshtml" />
-    <Content Include="Views\CommissionSets\Index.cshtml" />
+    <Content Include="Views\Fournisseur\Create.cshtml" />
+    <Content Include="Views\Fournisseur\Delete.cshtml" />
+    <Content Include="Views\Fournisseur\Edit.cshtml" />
+    <Content Include="Views\Fournisseur\Index.cshtml" />
+    <Content Include="Views\Commission\Create.cshtml" />
+    <Content Include="Views\Commission\Delete.cshtml" />
+    <Content Include="Views\Commission\Edit.cshtml" />
+    <Content Include="Views\Commission\Index.cshtml" />
     <Content Include="Views\LectureConsultation\LectureConsultation.cshtml" />
-    <Content Include="Views\LrgSets\Create.cshtml" />
-    <Content Include="Views\LrgSets\Delete.cshtml" />
-    <Content Include="Views\LrgSets\Details.cshtml" />
-    <Content Include="Views\LrgSets\Edit.cshtml" />
-    <Content Include="Views\LrgSets\Index.cshtml" />
     <Content Include="Views\Connexion\Connexion.cshtml" />
     <Content Include="Views\LectureConsultation\GetFList.cshtml" />
-    <Content Include="Views\LectureOv\LectureOv.cshtml" />
+    <Content Include="Views\LectureOV\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -10,107 +10,106 @@ using Projet_Onssa_Web_Mvc.Models;
 
 namespace Projet_Onssa_Web_Mvc.Controllers
 {
-    public class FournisseurSetsController : Controller
+    public class CommissionController : Controller
     {
         private Onssa_ProjetEntities db = new Onssa_ProjetEntities();
 
-        // GET: FournisseurSets
+        // GET: CommissionSets
         public ActionResult Index()
         {
-            return View(db.FournisseurSet.ToList());
+            return View(db.CommissionSet.ToList());
         }
 
-        // GET: FournisseurSets/Details/5
+        // GET: CommissionSets/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            CommissionSet commissionSet = db.CommissionSet.Find(id);
+            if (commissionSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(commissionSet);
         }
 
-        // GET: FournisseurSets/Create
+        // GET: CommissionSets/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FournisseurSets/Create
+        // POST: CommissionSets/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdFournisseur,Nom,Adresse,RC_n,Patente_n,IF_n,CNSS_n,Compte_bancaire_n,ICE,Ville,Banque")] FournisseurSet fournisseurSet)
+        public ActionResult Create([Bind(Include = "IdCommission,Nom,Prenom,Fonction,Affectation")] CommissionSet commissionSet)
         {
             if (ModelState.IsValid)
             {
-                db.FournisseurSet.Add(fournisseurSet);
+                db.CommissionSet.Add(commissionSet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(fournisseurSet);
+            return View(commissionSet);
         }
 
-        // GET: FournisseurSets/Edit/5
+        // GET: CommissionSets/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            CommissionSet commissionSet = db.CommissionSet.Find(id);
+            if (commissionSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(commissionSet);
         }
 
-        // POST: FournisseurSets/Edit/5
+        // POST: CommissionSets/Edit/5
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdFournisseur,Nom,Adresse,RC_n,Patente_n,IF_n,CNSS_n,Compte_bancaire_n,ICE,Ville,Banque")] FournisseurSet fournisseurSet)
+        public ActionResult Edit([Bind(Include = "IdCommission,Nom,Prenom,Fonction,Affectation")] CommissionSet commissionSet)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(fournisseurSet).State = EntityState.Modified;
+                db.Entry(commissionSet).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(fournisseurSet);
+            return View(commissionSet);
         }
 
-        // GET: FournisseurSets/Delete/5
+        // GET: CommissionSets/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            if (fournisseurSet == null)
+            CommissionSet commissionSet = db.CommissionSet.Find(id);
+            if (commissionSet == null)
             {
                 return HttpNotFound();
             }
-            return View(fournisseurSet);
+            return View(commissionSet);
         }
 
-        // POST: FournisseurSets/Delete/5
+        // POST: CommissionSets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FournisseurSet fournisseurSet = db.FournisseurSet.Find(id);
-            db.FournisseurSet.Remove(fournisseurSet);
+            CommissionSet commissionSet = db.CommissionSet.Find(id);
+            db.CommissionSet.Remove(commissionSet);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
