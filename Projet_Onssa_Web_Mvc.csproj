@@ -1804,6 +1804,7 @@
     <Compile Include="Controllers\AccueilController.cs" />
     <Compile Include="Controllers\CommissionController.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
+    <Compile Include="Controllers\GestionCompteSetsController.cs" />
     <Compile Include="Controllers\LectureOIController.cs" />
     <Compile Include="Models\DateToString.cs" />
     <Compile Include="Controllers\FournisseurController.cs" />
@@ -2170,6 +2171,7 @@
     <Content Include="Views\LectureOV\Index.cshtml" />
     <Content Include="Views\LectureOP\Index.cshtml" />
     <Content Include="Views\LectureOI\Index.cshtml" />
+    <Content Include="Views\GestionCompteSets\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

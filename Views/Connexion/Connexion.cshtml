@@ -17,10 +17,8 @@
 
 <body class="bg-gradient-primary">
 
-
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Connexion", "Connexion" ,FormMethod.Post))
     {
-
         <div class="container">
 
             <!-- Outer Row -->
@@ -38,10 +36,10 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                         </div>
-                                        <form class="user">
+                                        <form class="user" action="Connexion" method="post">
                                             <div class="form-group">
                                                
-                                                @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @type = "email" , @class="form-control form-control-user" , @id="exampleInputEmail" ,@placeholder="Enter Email Address..."}
+                                                @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @type = "text" , @class="form-control form-control-user" , @id="exampleInputEmail" ,@placeholder="Enter Email Address..."}
                                                 })
 
                                             </div>

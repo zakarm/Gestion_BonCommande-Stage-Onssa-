@@ -19,6 +19,25 @@ namespace Projet_Onssa_Web_Mvc.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Connexion(GestionCompteSet compte)
+        {
+             using (Onssa_ProjetEntities ctx = new Onssa_ProjetEntities())
+             {
+                    var user = ctx.GestionCompteSet.Where(x => x.Nom == compte.Nom && x.MotDePasse == compte.MotDePasse).FirstOrDefault();
 
-    }
+                    if (user == null)
+                    {
+                        return View("Connexion", compte);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Statistique", "Accueil");
+                    }
+             }
+        }
+        
+    
+
+}
 }
