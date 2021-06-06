@@ -32,6 +32,8 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                            select m;
                 ViewBag.t = data2.AsEnumerable().Sum(o => o.Ttc);
 
+            //Fournisseur_Statistic ---------------------------------------------------------------------- 
+
                 using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IRG7UCK\SQLEXPRESS;Initial Catalog=Onssa_Projet;Integrated Security=True"))
                 {
 
@@ -43,7 +45,9 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                     ViewBag.count = count;
                 }
 
-                var maxValue = ctx.ConsultationSet.Max(x => x.IdConsultation);
+
+            //Tas_Statistic ----------------------------------------------------------------------
+               var maxValue = ctx.ConsultationSet.Max(x => x.IdConsultation);
 
                 var queryM = from m in ctx.ModeleDevisSet
                             where m.InfoConsultation.IdConsultation == maxValue 
@@ -121,9 +125,41 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                     ViewBag.tas =" 100%";
                 }
 
-           
 
-            return View();
+            //Diagram_Statistic ----------------------------------------------------------------------
+
+                for(int i = 0; i<=11;i++)
+                {
+                    var dataPvr = from pvr in ctx.PVRSet
+                                where pvr.DatePVR.Month.Equals(i + 1)
+                                select pvr;
+                   if(dataPvr.FirstOrDefault() != null && i == 0)
+                   {
+                      @ViewBag.m1 =dataPvr.ToList().Count + "%";
+                      
+                   }
+                   else
+                   {
+                        if(dataPvr.FirstOrDefault() != null && i == 2)
+                        {
+                           @ViewBag.m2 = dataPvr.ToList().Count + "%" ;
+                        }
+                        else
+                        {
+                            if(dataPvr.FirstOrDefault() != null && i == 3)
+                            {
+                                @ViewBag.m3 = dataPvr.ToList().Count + "%";
+                            }
+                           
+                        }
+                   }
+                
+                
+                  
+                    
+                }
+
+             return View();
         }
        
     }
