@@ -49,6 +49,8 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                             where m.InfoConsultation.IdConsultation == maxValue 
                             select m;
 
+                ViewBag.tas = "20%";
+
                 if(queryM.FirstOrDefault() != null)
                 {
                     ViewBag.tas = "30%";
