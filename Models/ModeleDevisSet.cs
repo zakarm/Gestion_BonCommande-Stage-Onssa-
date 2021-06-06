@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ModeleDevisSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,15 +22,24 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdModeleDevis { get; set; }
+        [Display(Name = "Num Devis")]
         public string NumDevis { get; set; }
+        [Display(Name = "Date Devis")]
         public System.DateTime Date { get; set; }
+        [Display(Name = "Total")]
         public double Total { get; set; }
+        [Display(Name = "Tva")]
         public double Tva { get; set; }
+        [Display(Name = "Ttc")]
         public double Ttc { get; set; }
+        [Display(Name = "Id Fournisseur")]
         public int InfoFournisseur_IdFournisseur { get; set; }
+        [Display(Name = "Id Consultation")]
         public int InfoConsultation_IdConsultation { get; set; }
-    
+        [Display(Name = "Info Consultation")]
+
         public virtual ConsultationSet InfoConsultation { get; set; }
+        [Display(Name = "Info Fournisseur")]
         public virtual FournisseurSet InfoFournisseur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProduitSet> ProduitSet { get; set; }

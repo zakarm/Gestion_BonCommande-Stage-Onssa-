@@ -33,7 +33,7 @@ namespace Projet_Onssa_Web_Mvc.Controllers
             ViewBag.t=data.AsEnumerable().Sum(o => o.Ttc);
 
             //Fournisseur li repondaw had chhar 
-            using(SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IRG7UCK\SQLEXPRESS;Initial Catalog=Onssa_Projet;Integrated Security=True"))
+            using(SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-KCK4EL9\SQLEXPRESS;Initial Catalog=Onssa_Projet;Integrated Security=True"))
             {
 
                 SqlCommand cmd = new SqlCommand("select count(*) from FournisseurSet f inner join PVJSet pvj on f.IdFournisseur = pvj.InfoFournisseur_IdFournisseur inner join BCSet bc on pvj.IdPVJ = bc.IdBC where f.IdFournisseur in (select distinct pf.ListFournisseursRepondu_IdFournisseur from PVJFournisseur pf ) and month(bc.DateBC) = MONTH( GETDATE())", con);

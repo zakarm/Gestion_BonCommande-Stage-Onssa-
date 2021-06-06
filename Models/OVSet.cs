@@ -11,15 +11,21 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class OVSet
     {
         public int IdOV { get; set; }
+        [Display(Name = "Num ordre de virement")]
         public string NumOV { get; set; }
+        [Display(Name = "Sous Ordonnateur")]
         public string SousOrdonnateur { get; set; }
+        [Display(Name = "Tresorier Payeur")]
         public string TresorierPayeur { get; set; }
+        [Display(Name = "Id ordre de paiement")]
         public int InfoOP_IdOP { get; set; }
-    
+        [Display(Name = "Info ordre de paiement")]
+
         public virtual OPSet InfoOP { get; set; }
     }
 }

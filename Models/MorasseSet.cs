@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class MorasseSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,13 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int CodeMorasse { get; set; }
+        [Display(Name = "Exercice")]
         public string Exercice { get; set; }
+        [Display(Name = "Budget")]
         public string Budget { get; set; }
+        [Display(Name = "Description")]
         public string Description { get; set; }
+        [Display(Name = "Code Ligne ")]
         public int Ligne_CodeLigne { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

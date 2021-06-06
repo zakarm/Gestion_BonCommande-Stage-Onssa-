@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class FournisseurSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,15 +25,25 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdFournisseur { get; set; }
+        [Display(Name = "Nom Fournisseur")]
         public string Nom { get; set; }
+        [Display(Name = "Adresse Societe")]
         public string Adresse { get; set; }
+        [Display(Name = "RC n°")]
         public int RC_n { get; set; }
+        [Display(Name = "Patente n°")]
         public string Patente_n { get; set; }
+        [Display(Name = "IF n°")]
         public int IF_n { get; set; }
+        [Display(Name = "CNSS n°")]
         public int CNSS_n { get; set; }
+        [Display(Name = "Compte bancaire n°")]
         public string Compte_bancaire_n { get; set; }
+        [Display(Name = "ICE")]
         public string ICE { get; set; }
+        [Display(Name = "Ville")]
         public string Ville { get; set; }
+        [Display(Name = "Banque")]
         public string Banque { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

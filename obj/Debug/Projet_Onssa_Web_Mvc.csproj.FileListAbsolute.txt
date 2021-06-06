@@ -182,3 +182,19 @@ C:\Users\lenovo\Desktop\Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAp
 C:\Users\lenovo\Desktop\Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\lenovo\Desktop\Stage\Projet_Onssa_Web_Mvc\bin\stdole.dll
 C:\Users\lenovo\Desktop\Stage\Projet_Onssa_Web_Mvc\obj\Debug\Projet_Onssa_Web_Mvc.csprojAssemblyReference.cache
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.Shared.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Minfo\Desktop\Projet Stage\Projet_Onssa_Web_Mvc\bin\stdole.dll

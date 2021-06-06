@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class FESet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,13 +22,19 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdFE { get; set; }
+        [Display(Name = "Crédits budgétaires")]
         public int CreditsBudgetaires { get; set; }
+        [Display(Name = "Dépenses engagées")]
         public int DepensesEngagees { get; set; }
+        [Display(Name = "Disponible")]
         public int Disponible { get; set; }
+        [Display(Name = "Engagement de dépense proposé")]
         public int EngagementDepensesPropose { get; set; }
+        [Display(Name = "FICHE D'ENGAGEMENT N° ")]
         public string NumFe { get; set; }
+        [Display(Name = "Id Bon de commande")]
         public int InfoBC_IdBC { get; set; }
-    
+
         public virtual BCSet InfoBC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OISet> OISet { get; set; }

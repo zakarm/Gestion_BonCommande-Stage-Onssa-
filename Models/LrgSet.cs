@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class LrgSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,11 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int CodeLrg { get; set; }
+        [Display(Name = "Description Lrg")]
         public string DescriptionLrg { get; set; }
+        [Display(Name = "Num Lrg")]
         public string NumLrg { get; set; }
+        [Display(Name = "Num Paragraphe")]
         public Nullable<int> InfoParagraphe_NumPar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

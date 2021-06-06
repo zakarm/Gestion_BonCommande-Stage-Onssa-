@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ParagrapheSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +20,8 @@ namespace Projet_Onssa_Web_Mvc.Models
         {
             this.LrgSet = new HashSet<LrgSet>();
         }
-    
         public int NumPar { get; set; }
+        [Display(Name = "Description Paragraphe")]
         public string DescriptionPar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

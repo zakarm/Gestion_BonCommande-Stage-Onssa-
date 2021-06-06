@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PVJSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,9 +24,13 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdPVJ { get; set; }
+        [Display(Name = "Date procès verbal de jugement")]
         public System.DateTime DatePvj { get; set; }
+        [Display(Name = "Num procès verbal de jugement")]
         public string NumPvj { get; set; }
+        [Display(Name = "Id Consultation")]
         public int InfoConsultation_IdConsultation { get; set; }
+        [Display(Name = "Id Fournisseur")]
         public int InfoFournisseur_IdFournisseur { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

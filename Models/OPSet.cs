@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class OPSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,14 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdOP { get; set; }
+        [Display(Name = "Num ordre de paiement")]
         public string NumOP { get; set; }
+        [Display(Name = "Date ordre de paiement")]
         public System.DateTime DateOP { get; set; }
+        [Display(Name = "Id ordre d'imputation")]
         public int InfoOI_IdOI { get; set; }
-    
+        [Display(Name = "Info ordre d'imputation")]
+
         public virtual OISet InfoOI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OVSet> OVSet { get; set; }

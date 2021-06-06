@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ConsultationSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,10 +24,15 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdConsultation { get; set; }
+        [Display(Name = "Objet Consultation")]
         public string ObjetConsultation { get; set; }
+        [Display(Name = "Num Consultation")]
         public string NumConsultation { get; set; }
+        [Display(Name = "Date Lettre")]
         public System.DateTime DateLettre { get; set; }
+        [Display(Name = "Date Delai")]
         public System.DateTime DateDelai { get; set; }
+        [Display(Name = "Num Envoi")]
         public int NumEnvoi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

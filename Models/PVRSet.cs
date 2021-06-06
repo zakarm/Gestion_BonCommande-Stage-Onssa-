@@ -11,7 +11,8 @@ namespace Projet_Onssa_Web_Mvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PVRSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,14 @@ namespace Projet_Onssa_Web_Mvc.Models
         }
     
         public int IdPVR { get; set; }
+        [Display(Name = "Date proces verbale de reception")]
         public System.DateTime DatePVR { get; set; }
+        [Display(Name = "Num proces verbale de reception")]
         public string NumPvr { get; set; }
+        [Display(Name = "Id ordre d'imputation")]
         public int InfoOI_IdOI { get; set; }
-    
+        [Display(Name = "Info ordre d'imputation")]
+
         public virtual OISet InfoOI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommissionSet> CommissionSet { get; set; }
