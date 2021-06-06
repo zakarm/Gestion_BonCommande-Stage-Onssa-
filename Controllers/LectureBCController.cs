@@ -52,83 +52,80 @@ namespace Projet_Onssa_Web_Mvc.Controllers
 
         public ActionResult Export(int? id)
         {
-            var query = from bc in ctx.BCSet
-                        join pvj in ctx.PVJSet on bc.InfoPVJ.IdPVJ equals pvj.IdPVJ
-                        join m in ctx.ModeleDevisSet on pvj.InfoFournisseur.IdFournisseur equals
-                        m.InfoFournisseur.IdFournisseur
-                        where bc.IdBC == id && m.InfoConsultation.IdConsultation == pvj.InfoConsultation.IdConsultation
-                        select new
-                        {
-                            AdresseFour = m.InfoFournisseur.Adresse,
-                            Cnss = m.InfoFournisseur.CNSS_n,
-                            Ifn = m.InfoFournisseur.IF_n,
-                            Patente = m.InfoFournisseur.Patente_n,
-                            NumBc = bc.NumBc,
-                            NomFr = m.InfoFournisseur.Nom,
-                            Code = bc.InfoMorasse.CodeMorasse,
-                            Objet = m.InfoConsultation.ObjetConsultation,
-                            Exercice = bc.InfoMorasse.Exercice,
-                            Compte = m.InfoFournisseur.Compte_bancaire_n,
-                            Lrg = bc.InfoMorasse.Ligne.InfoLrg.NumLrg,
-                            Par = bc.InfoMorasse.Ligne.InfoLrg.InfoParagraphe.NumPar,
-                            Ligne = bc.InfoMorasse.Ligne.CodeLigne,
-                            NumPvj = pvj.IdPVJ,
-                            NumCon = pvj.InfoConsultation.IdConsultation,
-                            Budget = bc.InfoMorasse.Budget,
-                            Rc = m.InfoFournisseur.RC_n,
-                            Ice = m.InfoFournisseur.ICE,
-                            NumDevis = m.NumDevis,
-                            IdDevis = m.IdModeleDevis,
-                            Tva = m.Tva,
-                            Ttc = m.Ttc,
-                            thc = m.Total,
-                            DateBc = bc.DateBC,
 
-                        };
+                var query = from bc in ctx.BCSet
+                            join pvj in ctx.PVJSet on bc.InfoPVJ.IdPVJ equals pvj.IdPVJ
+                            join m in ctx.ModeleDevisSet on pvj.InfoFournisseur.IdFournisseur equals
+                            m.InfoFournisseur.IdFournisseur
+                            where bc.IdBC == id && m.InfoConsultation.IdConsultation == pvj.InfoConsultation.IdConsultation
+                            select new
+                            {
+                                AdresseFour = m.InfoFournisseur.Adresse,
+                                Cnss = m.InfoFournisseur.CNSS_n,
+                                Ifn = m.InfoFournisseur.IF_n,
+                                Patente = m.InfoFournisseur.Patente_n,
+                                NumBc = bc.NumBc,
+                                NomFr = m.InfoFournisseur.Nom,
+                                Code = bc.InfoMorasse.CodeMorasse,
+                                Objet = m.InfoConsultation.ObjetConsultation,
+                                Exercice = bc.InfoMorasse.Exercice,
+                                Compte = m.InfoFournisseur.Compte_bancaire_n,
+                                Lrg = bc.InfoMorasse.Ligne.InfoLrg.NumLrg,
+                                Par = bc.InfoMorasse.Ligne.InfoLrg.InfoParagraphe.NumPar,
+                                Ligne = bc.InfoMorasse.Ligne.CodeLigne,
+                                NumPvj = pvj.IdPVJ,
+                                NumCon = pvj.InfoConsultation.IdConsultation,
+                                Budget = bc.InfoMorasse.Budget,
+                                Rc = m.InfoFournisseur.RC_n,
+                                Ice = m.InfoFournisseur.ICE,
+                                NumDevis = m.NumDevis,
+                                IdDevis = m.IdModeleDevis,
+                                Tva = m.Tva,
+                                Ttc = m.Ttc,
+                                thc = m.Total,
+                                DateBc = bc.DateBC,
 
-            ReportDocument ce = new ReportDocument();
-            ce.Load(Path.Combine(Server.MapPath("~/CrystalReports"), "CrystalReportBC.rpt"));
+                            };
 
-            if (query.FirstOrDefault() != null)
-            {
-                int NumDevis = int.Parse(query.FirstOrDefault().IdDevis.ToString());
-                NumToString cc = new NumToString();
-                dapr.FillByMd(ds.ProduitSet, NumDevis);
-                ce.SetDataSource(ds);
-                ce.SetParameterValue("numdevis", query.FirstOrDefault().NumDevis.ToString());
-                ce.SetParameterValue("ice", query.FirstOrDefault().Ice.ToString());
-                ce.SetParameterValue("rc", query.FirstOrDefault().Rc.ToString());
-                ce.SetParameterValue("budget", query.FirstOrDefault().Budget.ToString());
-                ce.SetParameterValue("if", query.FirstOrDefault().Ifn.ToString());
-                ce.SetParameterValue("cnss", query.FirstOrDefault().Cnss.ToString());
-                ce.SetParameterValue("patente", query.FirstOrDefault().Patente.ToString());
-                ce.SetParameterValue("lrg", query.FirstOrDefault().Lrg.ToString());
-                ce.SetParameterValue("par", query.FirstOrDefault().Par.ToString());
-                ce.SetParameterValue("ligne", query.FirstOrDefault().Ligne.ToString());
-                ce.SetParameterValue("numbc", query.FirstOrDefault().NumBc.ToString());
-                ce.SetParameterValue("nom", query.FirstOrDefault().NomFr.ToString());
-                ce.SetParameterValue("objet", query.FirstOrDefault().Objet.ToString());
-                ce.SetParameterValue("exercice", query.FirstOrDefault().Exercice.ToString());
-                ce.SetParameterValue("compte", query.FirstOrDefault().Compte.ToString());
-                ce.SetParameterValue("adresse", query.FirstOrDefault().AdresseFour.ToString());
-                ce.SetParameterValue("thc", query.FirstOrDefault().thc.ToString());
-                ce.SetParameterValue("tva", query.FirstOrDefault().Tva.ToString());
-                ce.SetParameterValue("ttc", query.FirstOrDefault().Ttc.ToString());
-                ce.SetParameterValue("datebc", query.FirstOrDefault().DateBc.ToString());
-                ce.SetParameterValue("numm", cc.virgule(query.FirstOrDefault().Ttc.ToString()));
-                Response.Buffer = false;
-                Response.ClearContent();
-                Response.ClearHeaders();
-            }
+                ReportDocument ce = new ReportDocument();
+                ce.Load(Path.Combine(Server.MapPath("~/CrystalReports"), "CrystalReportBC.rpt"));
 
-            Stream stream = ce.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-            stream.Seek(0, SeekOrigin.Begin);
+                if (query.FirstOrDefault() != null)
+                {
+                    int NumDevis = int.Parse(query.FirstOrDefault().IdDevis.ToString());
+                    NumToString cc = new NumToString();
+                    dapr.FillByMd(ds.ProduitSet, NumDevis);
+                    ce.SetDataSource(ds);
+                    ce.SetParameterValue("numdevis", query.FirstOrDefault().NumDevis.ToString());
+                    ce.SetParameterValue("ice", query.FirstOrDefault().Ice.ToString());
+                    ce.SetParameterValue("rc", query.FirstOrDefault().Rc.ToString());
+                    ce.SetParameterValue("budget", query.FirstOrDefault().Budget.ToString());
+                    ce.SetParameterValue("if", query.FirstOrDefault().Ifn.ToString());
+                    ce.SetParameterValue("cnss", query.FirstOrDefault().Cnss.ToString());
+                    ce.SetParameterValue("patente", query.FirstOrDefault().Patente.ToString());
+                    ce.SetParameterValue("lrg", query.FirstOrDefault().Lrg.ToString());
+                    ce.SetParameterValue("par", query.FirstOrDefault().Par.ToString());
+                    ce.SetParameterValue("ligne", query.FirstOrDefault().Ligne.ToString());
+                    ce.SetParameterValue("numbc", query.FirstOrDefault().NumBc.ToString());
+                    ce.SetParameterValue("nom", query.FirstOrDefault().NomFr.ToString());
+                    ce.SetParameterValue("objet", query.FirstOrDefault().Objet.ToString());
+                    ce.SetParameterValue("exercice", query.FirstOrDefault().Exercice.ToString());
+                    ce.SetParameterValue("compte", query.FirstOrDefault().Compte.ToString());
+                    ce.SetParameterValue("adresse", query.FirstOrDefault().AdresseFour.ToString());
+                    ce.SetParameterValue("thc", query.FirstOrDefault().thc.ToString());
+                    ce.SetParameterValue("tva", query.FirstOrDefault().Tva.ToString());
+                    ce.SetParameterValue("ttc", query.FirstOrDefault().Ttc.ToString());
+                    ce.SetParameterValue("datebc", query.FirstOrDefault().DateBc.ToString());
+                    ce.SetParameterValue("numm", cc.virgule(query.FirstOrDefault().Ttc.ToString()));
+                    Response.Buffer = false;
+                    Response.ClearContent();
+                    Response.ClearHeaders();
+                }
 
+                Stream stream = ce.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                stream.Seek(0, SeekOrigin.Begin);
 
-
-            return new FileStreamResult(stream, "application/pdf");
-
-
+                return new FileStreamResult(stream, "application/pdf");
 
         }
     }
