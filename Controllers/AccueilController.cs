@@ -34,7 +34,7 @@ namespace Projet_Onssa_Web_Mvc.Controllers
 
             //Fournisseur_Statistic ---------------------------------------------------------------------- 
 
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IRG7UCK\SQLEXPRESS;Initial Catalog=Onssa_Projet;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-KCK4EL9\SQLEXPRESS;Initial Catalog=Onssa_Projet;Integrated Security=True"))
                 {
 
                     SqlCommand cmd = new SqlCommand("select count(*) from FournisseurSet f inner join PVJSet pvj on f.IdFournisseur = pvj.InfoFournisseur_IdFournisseur inner join BCSet bc on pvj.IdPVJ = bc.IdBC where f.IdFournisseur in (select distinct pf.ListFournisseursRepondu_IdFournisseur from PVJFournisseur pf ) and month(bc.DateBC) = MONTH( GETDATE())", con);
@@ -152,14 +152,37 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                             }
                            
                         }
-                   }
-                
-                
-                  
+                   }    
                     
                 }
 
-             return View();
+
+            //_______________________Count Ta3 BC Li3andi F 3ans ____________________________//
+            var CountBc = from bc in ctx.BCSet
+                               where bc.DateBC.Year.Equals(DateTime.Today.Year) || bc.DateBC.Year.Equals(DateTime.Today.Year - 1) || bc.DateBC.Year.Equals(DateTime.Today.Year - 2)
+                          select bc;
+            int countBc = int.Parse(CountBc.ToList().Count.ToString());
+            //____________________Count Ta3 BC Li3andi had L3AM________________//
+            var BcTodayYears = from bc in ctx.BCSet
+                        where bc.DateBC.Year.Equals(DateTime.Today.Year)
+                        select bc;
+            int countYear = (int.Parse(BcTodayYears.ToList().Count.ToString())) *100/countBc ;
+            ViewBag.BcTodayYears = countYear;
+            //__________________Count Ta3 BC Li3andi L3AM LII FAT________________________//
+            var BcTodayLYears = from bc in ctx.BCSet
+                               where bc.DateBC.Year.Equals(DateTime.Today.Year-1)
+                               select bc;
+            int countLYear = (int.Parse(BcTodayLYears.ToList().Count.ToString())) * 100/ countBc;
+            ViewBag.BcTodayLYears = countLYear;
+            //____________________Count Ta3 BC Li3andi Wam L3AM LIFAT 2019_______________//
+            var BcTodayLLYears = from bc in ctx.BCSet
+                               where bc.DateBC.Year.Equals(DateTime.Today.Year-2)
+                               select bc;
+            int countLLYear = (int.Parse(BcTodayLLYears.ToList().Count.ToString())) * 100/ countBc;
+            ViewBag.BcTodayLLYears = countLLYear;
+
+
+            return View();
         }
        
     }
