@@ -16,7 +16,7 @@ namespace Projet_Onssa_Web_Mvc
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "ConnexionController", action = "Connexion", id = UrlParameter.Optional }
             );
         }
     }

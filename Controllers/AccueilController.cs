@@ -46,7 +46,7 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                 }
 
 
-            //Tas_Statistic ----------------------------------------------------------------------
+            //-----------------------------------Tas_Statistic ----------------------------------------------------------------------
                var maxValue = ctx.ConsultationSet.Max(x => x.IdConsultation);
 
                 var queryM = from m in ctx.ModeleDevisSet
@@ -126,38 +126,184 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                 }
 
 
-            //Diagram_Statistic ----------------------------------------------------------------------
+            //----------------------------------------------chartèstart------------------------------------------------------
 
-                for(int i = 0; i<=11;i++)
+            for (int i = 1; i<=12;i++)
                 {
                     var dataPvr = from pvr in ctx.PVRSet
                                 where pvr.DatePVR.Month.Equals(i + 1)
                                 select pvr;
-                   if(dataPvr.FirstOrDefault() != null && i == 0)
+                   if( i == 1)
                    {
-                      @ViewBag.m1 =dataPvr.ToList().Count + "%";
-                      
-                   }
-                   else
-                   {
-                        if(dataPvr.FirstOrDefault() != null && i == 2)
+                        if (dataPvr.FirstOrDefault() != null)
                         {
-                           @ViewBag.m2 = dataPvr.ToList().Count + "%" ;
+                            @ViewBag.m1 = dataPvr.ToList().Count;
                         }
                         else
                         {
-                            if(dataPvr.FirstOrDefault() != null && i == 3)
+                            @ViewBag.m1 = 0;
+                        }
+
+                   }
+                   else
+                   {
+                        if( i == 2)
+                        {
+                             if(dataPvr.FirstOrDefault() != null)
+                             {
+                                @ViewBag.m2 = dataPvr.ToList().Count  ;
+                             }
+                            else
                             {
-                                @ViewBag.m3 = dataPvr.ToList().Count + "%";
+                                @ViewBag.m2 = 0;
+                            }
+                           
+                        }
+                        else
+                        {
+                            if( i == 3)
+                            {
+                                if (dataPvr.FirstOrDefault() != null)
+                                {
+                                    @ViewBag.m3 = dataPvr.ToList().Count;
+                                }
+                                else
+                                {
+                                    @ViewBag.m3 = 0;
+                                }
+                            }
+                            else
+                            {
+                                if ( i == 4)
+                                {
+                                    if (dataPvr.FirstOrDefault() != null)
+                                    {
+                                        @ViewBag.m4 = dataPvr.ToList().Count;
+                                    }
+                                    else
+                                    {
+                                        @ViewBag.m4 = 0;
+                                    }
+                                }
+                                else
+                                {
+                                    if ( i == 5)
+                                    {
+                                        if (dataPvr.FirstOrDefault() != null)
+                                        {
+                                            @ViewBag.m5 = dataPvr.ToList().Count;
+                                        }
+                                        else
+                                        {
+                                            @ViewBag.m5 = 0;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if ( i == 6)
+                                        {
+                                            if (dataPvr.FirstOrDefault() != null)
+                                            {
+                                                @ViewBag.m6 = dataPvr.ToList().Count;
+                                            }
+                                            else
+                                            {
+                                                @ViewBag.m6 = 0;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (i == 7)
+                                            {
+                                                if (dataPvr.FirstOrDefault() != null)
+                                                {
+                                                    @ViewBag.m7 = dataPvr.ToList().Count;
+                                                }
+                                                else
+                                                {
+                                                    @ViewBag.m7 = 0;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if ( i == 8)
+                                                {
+                                                    if (dataPvr.FirstOrDefault() != null)
+                                                    {
+                                                        @ViewBag.m8 = dataPvr.ToList().Count;
+                                                    }
+                                                    else
+                                                    {
+                                                        @ViewBag.m8 = 0;
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if ( i == 9)
+                                                    {
+                                                        if (dataPvr.FirstOrDefault() != null)
+                                                        {
+                                                            @ViewBag.m9 = dataPvr.ToList().Count;
+                                                        }
+                                                        else
+                                                        {
+                                                            @ViewBag.m9 = 0;
+                                                        }
+                                                     }
+                                                    else
+                                                    {
+                                                        if ( i == 10)
+                                                        {
+                                                            if (dataPvr.FirstOrDefault() != null)
+                                                            {
+                                                                @ViewBag.m10 = dataPvr.ToList().Count;
+                                                            }
+                                                            else
+                                                            {
+                                                                @ViewBag.m10 = 0;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if ( i == 11)
+                                                            {
+                                                                if (dataPvr.FirstOrDefault() != null)
+                                                                {
+                                                                    @ViewBag.m11 = dataPvr.ToList().Count;
+                                                                }
+                                                                else
+                                                                {
+                                                                    @ViewBag.m11 = 0;
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                if (dataPvr.FirstOrDefault() != null)
+                                                                {
+                                                                    @ViewBag.m12 = dataPvr.ToList().Count;
+                                                                }
+                                                                else
+                                                                {
+                                                                    @ViewBag.m12 = 0;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                            
                         }
                    }
-                
-                
                   
                     
-                }
+             }
+            //----------------------------------------------chartend------------------------------------------------------
+
+
 
              return View();
         }

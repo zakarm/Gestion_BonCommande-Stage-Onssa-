@@ -29,9 +29,14 @@ namespace Projet_Onssa_Web_Mvc.Controllers
                     if (user == null)
                     {
                         return View("Connexion", compte);
-                    }
+
+                    
+                }
                     else
                     {
+
+                        Session["UserID"] = user.Id.ToString();
+                        Session["UserName"] = user.Nom.ToString();
                         return RedirectToAction("Statistique", "Accueil");
                     }
              }
