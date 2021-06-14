@@ -9,90 +9,105 @@
 <div style="padding:30px;">
 
 
-    <h2>Fournisseur <sup style="font-size:15px;">Information</sup></h2>
+    
     <br />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Fournisseur Information</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Adresse)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RC_n)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Patente_n)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IF_n)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CNSS_n)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Compte_bancaire_n)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ICE)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ville)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Banque)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adresse)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RC_n)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patente_n)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IF_n)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CNSS_n)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Compte_bancaire_n)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ICE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ville)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Banque)
-            </th>
-            <th></th>
-        </tr>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Adresse)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RC_n)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Patente_n)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IF_n)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CNSS_n)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Compte_bancaire_n)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ICE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ville)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Banque)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdFournisseur }) |
+                                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IdFournisseur })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nom)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adresse)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RC_n)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Patente_n)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IF_n)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CNSS_n)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Compte_bancaire_n)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ICE)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ville)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Banque)
-                </td>
-                <td>
-                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdFournisseur }) |
-                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IdFournisseur })
-                </td>
-            </tr>
-        }
+                </table>
 
-    </table>
-    <hr />
-    <div>
-        @Html.ActionLink("Ajouter", "Create")
+                <hr />
+                <div>
+                    @Html.ActionLink("Ajouter", "Create")
+                </div>
+
+            </div>
+        </div>
     </div>
-
-
 </div>
+
+
+

@@ -1804,6 +1804,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
+    <Compile Include="Controllers\ErreurController.cs" />
     <Compile Include="Controllers\LectureConsultationController.cs" />
     <Compile Include="Controllers\LectureBCController.cs" />
     <Compile Include="Controllers\CommissionController.cs" />
@@ -2183,6 +2184,7 @@
     <Content Include="Views\LecturePVJ\Index.cshtml" />
     <Content Include="Views\LectureModeleDevis\Index.cshtml" />
     <Content Include="Views\LectureConsultation\Index.cshtml" />
+    <Content Include="Views\Erreur\Erreur.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
