@@ -184,13 +184,17 @@
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
+                                            <i class="fas fa-circle text-primary"></i>@DateTime.Today.Year
+                                        </span>
+                                        @{ 
+                                            DateTime LastYe = DateTime.Today.AddYears(-1);
+                                            DateTime LLastYe = DateTime.Today.AddYears(-2);
+                                        }
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i>@LastYe.Year
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
+                                            <i class="fas fa-circle text-info"></i> @LLastYe.Year
                                         </span>
                                     </div>
                                 </div>
@@ -393,9 +397,9 @@
     var myPieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: [@DateTime.Today.Year , @DateTime.Today.Year-1, @DateTime.Today.Year-2],
+            labels: [@DateTime.Today.Year, @DateTime.Today.Year-1, @DateTime.Today.Year-2],
             datasets: [{
-                data: [55, 30, 15],
+                data: [@ViewBag.BcTodayYears, @ViewBag.BcTodayLYears, @ViewBag.BcTodayLLYears],
                 backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                 hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",
