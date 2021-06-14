@@ -4,80 +4,93 @@
     ViewBag.Title = "Index";
 }
 
-<div style="padding:50px;">
+<div style="padding:30px;">
 
-    <h2>Lecture Ordre d'imputation </h2>
+
+
     <br />
-    <br />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Etat OI</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumOi)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateOI)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumCompteDebit)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VisaControle)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VisaCsrs)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DatePaiement)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VisaSordonnateur)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.VisaTresorierPayeur)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfoFE.NumFe)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NumOi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOI)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumCompteDebit)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VisaControle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VisaCsrs)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DatePaiement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VisaSordonnateur)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VisaTresorierPayeur)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InfoFE.NumFe)
-            </th>
-            <th></th>
-        </tr>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumOi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateOI)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumCompteDebit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VisaControle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VisaCsrs)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DatePaiement)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VisaSordonnateur)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VisaTresorierPayeur)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfoFE.NumFe)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Export", "Export", new { id = item.IdOI })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumOi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOI)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumCompteDebit)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VisaControle)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VisaCsrs)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DatePaiement)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VisaSordonnateur)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VisaTresorierPayeur)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InfoFE.NumFe)
-                </td>
-                <td>
-                    @Html.ActionLink("Export", "Export", new { id = item.IdOI }) 
-                </td>
-            </tr>
-        }
-
-    </table>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+

@@ -6,43 +6,56 @@
 }
 
 
-<div style="padding:50px;">
+<div style="padding:30px;">
 
-    <h2>Lecture Ordre de paiement </h2>
+
+
     <br />
-    <br />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lecture Ordre de paiement</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NumOP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InfoOI.NumOi)
-            </th>
-            <th></th>
-        </tr>
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumOP)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateOP)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfoOI.NumOi)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumOP)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOP)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InfoOI.NumOi)
-                </td>
-                <td>
-                    @Html.ActionLink("Export", "Export", new { id = item.IdOP })
-                </td>
-            </tr>
-        }
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumOP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateOP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfoOI.NumOi)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Export", "Export", new { id = item.IdOP })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
 
-    </table>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

@@ -7,51 +7,71 @@
 
 <div style="padding:30px;">
 
-    <h2>Commission <sup style="font-size:15px;">Information</sup></h2>
+
+
     <br />
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Prenom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fonction)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Affectation)
-            </th>
-            <th></th>
-        </tr>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Commission Information</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nom)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Prenom)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fonction)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Affectation)
-                </td>
-                <td>
-                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdCommission }) |
-                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IdCommission })
-                </td>
-            </tr>
-        }
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prenom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Fonction)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Affectation)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-    </table>
-    <hr />
-    <div>
-        @Html.ActionLink("Ajouter", "Create")
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prenom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Fonction)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Affectation)
+                                </td>
+                                
+                                <td>
+                                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdCommission }) |
+                                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IdCommission })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+                <hr />
+                <div>
+                    @Html.ActionLink("Ajouter", "Create")
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
-    
+
+
+

@@ -4,67 +4,82 @@
     ViewBag.Title = "Index";
 }
 
-<div style="padding:50px;">
 
-    <h2>Lecture modele devis </h2>
+<div style="padding:30px;">
+
+
+
     <br />
-    <br />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lecture Modele devis</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NumDevis)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Total)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tva)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ttc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InfoConsultation.ObjetConsultation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InfoFournisseur.Nom)
-            </th>
-            <th></th>
-        </tr>
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumDevis)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Total)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Tva)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ttc)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfoConsultation.ObjetConsultation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InfoFournisseur.Nom)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumDevis)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Total)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tva)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ttc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InfoConsultation.ObjetConsultation)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InfoFournisseur.Nom)
-                </td>
-                <td>
-                    @Html.ActionLink("Export", "Export", new { id = item.IdModeleDevis })
-                </td>
-            </tr>
-        }
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumDevis)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Tva)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ttc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfoConsultation.ObjetConsultation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InfoFournisseur.Nom)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Export", "Export", new { id = item.IdModeleDevis })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
 
-    </table>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+
