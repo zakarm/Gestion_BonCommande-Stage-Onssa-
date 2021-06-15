@@ -99,7 +99,8 @@
                         @Html.ActionLink("Consultation", "Index", "LectureConsultation", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Modele Devis", "Index", "LectureModeleDevis", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Procès verbal de J", "Index", "LecturePVJ", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Bon de commande", "Index", "LectureConsultation", null, new { @class = "collapse-item" })
+
+                        @Html.ActionLink("Bon de commande", "Index", "LectureBc", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Fiche d'engagement", "Index", "LectureFE", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Ordre d'imputation", "Index", "LectureOI", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Procès verbal de R", "Index", "LecturePVR", null, new { @class = "collapse-item" })
@@ -142,6 +143,8 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
+                        @Html.ActionLink("Paragraphe", "Index", "Commission", null, new { @class = "collapse-item" })
+
                         <a class="collapse-item" href="">Paragraphe</a>
                         <a class="collapse-item" href="">Lrg</a>
                         <a class="collapse-item" href="">Ligne</a>
