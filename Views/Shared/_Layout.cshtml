@@ -143,12 +143,11 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
-                        @Html.ActionLink("Paragraphe", "Index", "Commission", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Paragraphe", "Erreur", "Erreur", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Lrg", "Erreur", "Erreur", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Ligne", "Erreur", "Erreur", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Morasse", "Erreur", "Erreur", null, new { @class = "collapse-item" })
 
-                        <a class="collapse-item" href="">Paragraphe</a>
-                        <a class="collapse-item" href="">Lrg</a>
-                        <a class="collapse-item" href="">Ligne</a>
-                        <a class="collapse-item" href="">Morasse</a>
                     </div>
                 </div>
             </li>
@@ -171,9 +170,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Mot de passe oublié</a>
+                        @Html.ActionLink("Connexion", "Connexion", "Connexion", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Gestion Comptes", "GestionCompteSets", "GestionCompteSets", null, new { @class = "collapse-item" })
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         @Html.ActionLink("404 Page", "Erreur", "Erreur", null, new { @class = "collapse-item" })
@@ -187,6 +185,7 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span>
                 </a>
+
             </li>
 
             <!-- Nav Item - Tables -->
